@@ -5,12 +5,13 @@ import os
 import sys
 from abc import ABCMeta
 from datetime import date
+from collections import defaultdict
 
 class LinkHandler(metaclass=ABCMeta):
     '''Abstract class for creation the handlers
     with particular behaviour
     to organize translators' work
-    with different news' web-pages.'''
+    with translating text from different web-pages.'''
 
     handlers_dict = {}
 
@@ -51,19 +52,16 @@ class LinkHandler(metaclass=ABCMeta):
         dirc = os.getcwd() + slash + date.today().strftime('%d.%m.%y')
 
         try:
-            os.makedirs(
-                dirc
-                )
+            os.makedirs(dirc)
         except:
             pass
-
-
 
         path = r'{}{}{}{}'.format(dirc, slash, name, '.docx')
 
         print('\n\tIs storing in:\n\t\t{}\n\tFile name:\n\t\t{}'.format(
             dirc, name
-            ))
+            )
+            )
 
         return path
 
@@ -121,6 +119,5 @@ class AnfLinkHandler(LinkHandler):
         '''Count the number of symbols with spases
         from list of strings'''
 
-        AnfLinkHandler.get_text(self)
         self.count = sum([len(line) for line in self.text])
-        return self.count
+        return print('\n\tAdditional info:',self.count, 'symbols in article')
