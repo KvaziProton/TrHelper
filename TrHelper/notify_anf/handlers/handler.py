@@ -29,32 +29,18 @@ class LinkHandler(metaclass=ABCMeta):
 
 
     def form_path(name):
-        '''Construct the path to store the parsed text in docx
-        in directories inside cwd separetly for each day
-        for Linux and Windows based system '''
+        '''
+            Construct the path to store the parsed text in docx
+            in directory inside cwd
+        '''
 
-        slash_dict = dict(zip(('linux', 'win'), ('/', '\\')))
-
-        if sys.platform.startswith('linux'):
-            slash = slash_dict['linux']
-        elif sys.platform.startswith('win'):
-            slash = slash_dict['win']
-        else:
-            print(
-                '''It looks like we will have trobles.
-                We run only in Linux and Windows, but you have {}'''.format(
-                sys.platform
-                )
-                )
-        dirc = os.getcwd() + slash + date.today().strftime('%d.%m.%y')
-
+        dirc = os.getcwd() + os.sep + date.today().strftime('%d.%m.%y')
         try:
             os.makedirs(dirc)
         except:
             pass
 
-        path = r'{}{}{}{}'.format(dirc, slash, name, '.docx')
-
+        path = dirc + os.sep + name + '.docx'
         print('\n\tIs storing in:\n\t\t{}\n\tFile name:\n\t\t{}'.format(
             dirc, name
             )
