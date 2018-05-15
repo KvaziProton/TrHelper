@@ -17,8 +17,31 @@ class ANFNotify():
     def get_info(self):
         '''Try to parse the page with all articles and get info
         about last one, return the title and the link'''
+
         try:
-            self.soup = BeautifulSoup(requests.get(self.url).text, 'lxml')
+            self.soup = BeautifulSoup(
+                requests.get(self.url).text,
+                'lxml'
+                )
+
+        except OSError:
+            self.message = '''
+There is no Internet connection, monitoring is stoped!
+
+Check Internet connection and
+try again later.
+            '''
+            self.ICON_PATH = os.getcwd() + '/static/siren.png'
+            self.notify_title = 'Connection was lost!'
+
+        except IndexError:
+            self.message = '''
+Fucking capcha again!!!
+            '''
+            self.ICON_PATH = os.getcwd() + '/static/siren.png'
+            self.notify_title = 'Are you robot??!'
+
+        else:
             self.blocks = self.soup.find_all('tr')[1]
 
             self.link = self.blocks.find('a').get('href')
@@ -33,17 +56,7 @@ class ANFNotify():
             self.ICON_PATH = os.getcwd() + '/static/alarm.png'
             self.notify_title = "New ANF article!"
 
-            return self.title, self.link
-
-        except:
-            self.message = '''
-There is no Internet connection, monitoring is stoped!
-
-Check Internet connection and
-try again later.
-            '''
-            self.ICON_PATH = os.getcwd() + '/static/siren.png'
-            self.notify_title = 'Connection was lost!'
+            return self.title, self.link, self.count
 
 
     def notify(self, timeout=5000*2):

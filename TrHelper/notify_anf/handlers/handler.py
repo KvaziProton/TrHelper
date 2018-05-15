@@ -117,7 +117,7 @@ class AnfLinkHandler(LinkHandler):
                 docx.write(el + '\n\n')
             docx.write(self.url)
 
-        return print('\n\tWork is done!')
+        print('\n\tWork is done!')
 
 
     def count_simbols(self):

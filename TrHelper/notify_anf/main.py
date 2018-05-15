@@ -1,31 +1,55 @@
 import time
 import argparse
+import pyperclip
 from notify_anf import ANFNotify
 
 
-def loop(sleep=60*2):
+# def check_articles(a=ANFNotify()):
+#
+#     f_check, *rest = a.get_info()
+#     b = ANFNotify()
+#
+#
+#     while f_check == sec_sheck:
+#         b = ANFNotify()
+#         sec_sheck, link, symbol_number = b.get_info()
+#
+#     b.notify()
+#     a = b
+#     check_articles(a)
+
+
+
+
+def loop(sleep=10):
     '''Main loop. Check for new articles in ANFnews' website by
     comparison of titles with particular frequency. In case
     of new article the link will be printed in command line.'''
 
     print('Monitoring ANF website')
-    check = ANFNotify()
-    check.get_info()
-    check.notify()
+    a = ANFNotify()
+    f_check, *rest = a.get_info()
+    a.notify()
     count = 0
     while 1:
         try:
-            a = ANFNotify()
-            f_check, *l = a.get_info()
-            time.sleep(sleep)
-            sec_sheck, link = a.get_info()
+            #time.sleep(sleep)
+            b = ANFNotify()
+            sec_sheck, link, symbol_number = b.get_info()
 
             if f_check != sec_sheck:
-                a.notify()
+                b.notify()
+                pyperclip.copy(link)
                 count += 1
-                print('\n\t{}. {}'.format(count, link))
-                
-        except (KeyboardInterrupt, TypeError):
+                print(
+                    '\n\t{}. {}\n\tInfo: {} symbols in article'.format(
+                    count, link, symbol_number
+                    )
+                    )
+                a = b
+                f_check, *rest = a.get_info()
+
+        except KeyboardInterrupt:
             print('\nStop monitoring of ANF')
             break
 
