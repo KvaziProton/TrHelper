@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+<html>
+{% block content %}
+<div class="btms">
+<form action="/dict" method="post" >
+  {% csrf_token %}
+  <input type="submit" name="dict" value="Exception Dict" />
+</form>
+<form action="/add_term/" method="post">
+  {% csrf_token %}
+  <input type="submit" name="except" value="Add exception" />
+</form>
+</div>
+<div class="dict">
+{{ form.kurd_input.label}}
+<form action="" method="get">
+
+  {{ form.kurd_input }}
+  <input type="submit" name="translit" value="Do it!"/>
+  {{ form.ru_output }}
+  {% if info %}
+    {{ form.info }}
+  {% endif %}
+  {% if context %}
+  <input type="submit" name="improve" value="Improve!" />
+  {% endif %}
+
+<!--
+  <script type="text/javascript">
+  input.addEventListener("keyup", function(event) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Trigger the button element with a click
+      document.getElementById("translit").click();
+    }
+  });
+
+     </script> -->
+       </form>
+     </div>
+{% endblock %}
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<html>
+{% block content %}
+<body>
+  <div class="title">
+
+    <h2> Добавить исключение в словарь</h2>
+  </div>
+  <div class="title">
+<form action="/add_term/" method="post">
+
+
+  {% csrf_token %}
+  {% if message %}
+    <h3> {{message}}</h3>
+  {% endif %}
+  {{ form }}
+  <input type="submit" name="add" value="Add" />
+
+</form>
+</div>
+<div class="title">
+<form action="/dict" method="post" >
+  {% csrf_token %}
+  <input type="submit" name="dict" value="Exception Dict" />
+</form>
+<form action="" method="post">
+  {% csrf_token %}
+<input type="submit" name="back" value="Back to main" />
+</form>
+</div>
+</body>
+{% endblock %}
+</html>

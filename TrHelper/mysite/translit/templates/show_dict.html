@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<html>
+{% block content %}
+<div class="title">
+<h2> Словарь исключений</h2>
+<h3>
+  Если слово в словаре, транслитерация вернет значение из словаря.
+<p>  Вы можете дополнить его новыми значениями.</p>
+</h3>
+</div>
+<body>
+  <div class="dict">
+{% for data in data %}
+{% if data.info %}
+<p>
+ - {{data.kurd}} (рус. {{data.ru}}) -- {{data.info}}
+</p>
+{% else %}
+<p>
+ - {{data.kurd}} (рус. {{data.ru}})
+</p>
+{% endif %}
+{% endfor%}
+</div>
+<div class="btms">
+  <li>
+  <p>
+<form action="/add_term/" method="post">
+  {% csrf_token %}
+  <input type="submit" name="except" value="Add exception" />
+</form>
+</p>
+</li>
+<li>
+<p>
+<form action="/translit" method="post">
+  {% csrf_token %}
+<input type="submit" name="back" value="Back to main" />
+</form>
+</p>
+</li>
+</div>
+</body>
+{% endblock %}
+</html>

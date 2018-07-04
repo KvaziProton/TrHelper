@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Translitiratin: kurdish to russian</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'tr.css' %}">
+    </head>
+
+<body>
+       <div class="page-header">
+         <p>
+           <h1><a href="/">Translit</a></h1>
+           <h2>Транслитерация с курдского языка (курманджи) на русский</h2>
+         </p>
+       </div>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

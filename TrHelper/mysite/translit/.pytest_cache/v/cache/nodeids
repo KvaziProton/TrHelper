@@ -1,0 +1,20 @@
+[
+  "test_logic.py::test_tr_cls[tr_single_data0]",
+  "test_logic.py::test_tr_cls[tr_single_data1]",
+  "test_logic.py::test_tr_cls[tr_single_data2]",
+  "test_logic.py::test_tr_cls[tr_single_data3]",
+  "test_logic.py::test_tr_cls[tr_single_data4]",
+  "test_logic.py::test_tr_cls[tr_single_data5]",
+  "test_logic.py::test_tr_cls[tr_single_data6]",
+  "test_logic.py::test_tr_cls[tr_single_data7]",
+  "test_logic.py::test_tr_cls[tr_single_data8]",
+  "test_logic.py::test_tr_cls[tr_single_data9]",
+  "test_logic.py::test_tr_cls[tr_single_data10]",
+  "test_logic.py::test_tr_cls[tr_single_data11]",
+  "test_logic.py::test_raw_translit[raw_data_for_cls0]",
+  "test_logic.py::test_raw_translit[raw_data_for_cls1]",
+  "test_logic.py::test_raw_translit[raw_data_for_cls2]",
+  "test_logic.py::test_raw_translit[raw_data_for_cls3]",
+  "test_logic.py::test_raw_translit[raw_data_for_cls4]",
+  "test_logic.py::test_raw_translit[raw_data_for_cls5]"
+]

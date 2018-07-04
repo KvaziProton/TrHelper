@@ -1,0 +1,20 @@
+[
+  "tests.py::test_integral[int_check0]",
+  "tests.py::test_integral[int_check1]",
+  "tests.py::test_integral[int_check2]",
+  "tests.py::test_wrap[Alan-al Umar]",
+  "tests.py::test_wrap[Bakar Yasem\\xeen]",
+  "tests.py::test_wrap[Agyr, Amude]",
+  "tests.py::test_translit[data0]",
+  "tests.py::test_translit[data1]",
+  "tests.py::test_translit[data2]",
+  "tests.py::test_translit[data3]",
+  "tests.py::test_translit[data4]",
+  "tests.py::test_translit[data5]",
+  "tests.py::test_translit[data6]",
+  "tests.py::test_translit[data7]",
+  "tests.py::test_translit[data8]",
+  "tests.py::test_translit[data9]",
+  "tests.py::test_translit[data10]",
+  "tests.py::test_translit[data11]"
+]

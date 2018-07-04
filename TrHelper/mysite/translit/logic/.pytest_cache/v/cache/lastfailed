@@ -1,0 +1,15 @@
+{
+  "tests.py::test_translit[data0]": true,
+  "tests.py::test_translit[data10]": true,
+  "tests.py::test_translit[data11]": true,
+  "tests.py::test_translit[data12]": true,
+  "tests.py::test_translit[data1]": true,
+  "tests.py::test_translit[data2]": true,
+  "tests.py::test_translit[data3]": true,
+  "tests.py::test_translit[data4]": true,
+  "tests.py::test_translit[data5]": true,
+  "tests.py::test_translit[data6]": true,
+  "tests.py::test_translit[data7]": true,
+  "tests.py::test_translit[data8]": true,
+  "tests.py::test_translit[data9]": true
+}

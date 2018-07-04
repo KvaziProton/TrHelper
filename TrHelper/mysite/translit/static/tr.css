@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+/* .top-menu {
+  background: rgba(255,255,255,.5);
+  box-shadow: 3px 0 7px rgba(0,0,0,.3);
+  padding: 20px;
+}
+.top-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navbar-logo {display: inline-block;} */
+body {
+    margin:0;
+    padding-left: 30px;
+    font-family: monospace;
+}
+.dict {
+  background-color: #E6E6E6;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
+  font-family: monospace;
+}
+/* .dict-btm {
+    margin-left: 30px
+} */
+.page-header {
+    background-color: #E6E6E6;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    font-family: monospace;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #121212;
+    font-size: 34pt;
+    text-decoration: none;
+}
+.page-header h2 {
+    color: #121212;
+    font-size: 12pt;
+    text-decoration: none;
+}
+.title {
+  padding: 20px 20px 20px 20px;
+}
+
+.title h2 {
+  font-family: monospace;
+  font-size: 16pt;
+  color: #121212;
+}
+.title h3 {
+  font-family: monospace;
+  font-size: 12pt;
+  color: #121212;
+}
+ul {
+  list-style: none;
+  margin: 0 auto;
+}
+.btms {
+  padding-left: 30px;
+  text-decoration: none;
+
+}
+.btms li {
+  display: inline;
+}
+/* .menu a {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  line-height: 61px;
+  padding-left: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: bold;
+  color: #F73E24;
+  transition:.3s linear;
+}
+.menu a:before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: #F73E24;
+  position: absolute;
+  left: 50%;
+  transform: rotate(45deg) translateX(6.5px);
+  opacity: 0;
+  transition: .3s linear;
+}
+.menu a:hover:before {opacity: 1;}
+@media (max-width: 660px) {
+.menu {
+  float: none;
+  padding-top: 20px;
+}
+/* .top-menu {
+  text-align: center;
+  padding: 20px 0 0 0;
+} */
+/* .menu a {padding: 0 10px;}
+.menu a:before {transform: rotate(45deg) translateX(-6px);}
+}
+@media (max-width: 600px) {
+.menu li {display: block;}
+} */
