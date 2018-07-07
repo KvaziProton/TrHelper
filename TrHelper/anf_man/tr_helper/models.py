@@ -1,10 +1,10 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class User(AbstractUser):
     is_translator = models.BooleanField(default=False)
     is_editor = models.BooleanField(default=False)
-    last_active = models.DateTimeField(blank=True, null=True)
 
 
 class Translator(models.Model):
@@ -13,12 +13,13 @@ class Translator(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    language = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.user.username
 
 
-class Editor(model.Models):
+class Editor(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
@@ -29,14 +30,15 @@ class Editor(model.Models):
         return self.user.username
 
 
-class Articles(models.Model):
-    translalor = models.ForeignKey(
+class Article(models.Model):
+    translator = models.ForeignKey(
         Translator,
         on_delete=models.CASCADE,
-        blank=True)
+        null=True, blank=True)
     url = models.URLField()
     title = models.CharField(max_length=100)
-    published_datetime = models.DateTimeField(auto_now_add=True)
+    symbols_amount = models.IntegerField()
+    published = models.DateTimeField(auto_now_add=True)
     #автоматически ставит дату-время (datetime.datetime)
     #при каждом сохранении inst.save()
     #даные берет из настроек timezone
@@ -44,9 +46,12 @@ class Articles(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ('published',)
+
 
 class TranslationStatistic(models.Model):
-    translalor = models.ForeignKey(
+    translator = models.ForeignKey(
         Translator,
         on_delete=models.CASCADE
         )
@@ -55,7 +60,7 @@ class TranslationStatistic(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
-    translation_added = models.DateTimeField(auto_now=True)
+    translated = models.DateTimeField(auto_now=True)
     #ставит дату при создании
     symbols_ammount = models.IntegerField()
 

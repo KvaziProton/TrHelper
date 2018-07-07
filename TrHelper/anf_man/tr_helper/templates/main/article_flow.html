@@ -1,5 +1,32 @@
-<p class="article">
-  
-  <input type="submit" value="Перевести" class="btm"/>
-</p>
-<script src="{% static 'article_flow.js' %}"
+{% extends 'main/base.html' %}
+
+{% block content %}
+<table>
+  <tr>
+    <td class="date-title">
+      Дата
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+  {% for article in articles %}
+    <tr>
+      <td>
+        {{ article.published.time }}
+      </td>
+      <td>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </td>
+      <td>
+        {{ article.symbols_amount }} symbols
+      </td>
+      <td>
+        <input type="submit" value="Перевести" class="btm" article_id="{{ article.id }}"/>
+      </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
