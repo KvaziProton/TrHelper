@@ -1,7 +1,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = key
+SECRET_KEY = '+1f#b*7qe50+$z3i#l5hhk4ex)7h3$9yqzd1y_-*2+z3daf)8#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -96,12 +96,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AUTH_USER_MODEL = 'tr_helper.User'
 
-LOGIN_URL = 'login' 
+LOGIN_URL = 'login'
 
 LOGOUT_URL = 'logout'
 
 LOGIN_REDIRECT_URL = 'main'
 
 LOGOUT_REDIRECT_URL = 'main'
+
 
 CELERY_BROKER_URL = 'amqp://localhost'

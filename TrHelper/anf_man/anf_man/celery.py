@@ -8,6 +8,10 @@ app = Celery('anf_man')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
 
-@app.task(bind=True)
-def debug_task(self):
-    print('Request: {0!r}'.format(self.request))
+
+app.conf.beat_schedule = {
+    'check-every-seconds': {
+        'task': 'tr_helper.tasks.check_if_new',
+        'schedule': 1.0,
+    },
+}

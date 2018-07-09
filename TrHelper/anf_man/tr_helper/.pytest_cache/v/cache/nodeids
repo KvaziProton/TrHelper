@@ -1,0 +1,7 @@
+[
+  "test_parser.py::test_newarticle_cls[newarticle_data0]",
+  "test_parser.py::test_newarticle_cls[newarticle_data1]",
+  "test_parser.py::test_ifnew_func[ifnew_data0]",
+  "test_parser.py::test_ifnew_func[ifnew_data1]",
+  "test_parser.py::test_ifnew_func[ifnew_data2]"
+]

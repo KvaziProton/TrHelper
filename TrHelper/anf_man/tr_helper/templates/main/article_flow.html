@@ -14,6 +14,7 @@
   {% for article in articles %}
     <tr>
       <td>
+        {{ article.published.date }}
         {{ article.published.time }}
       </td>
       <td>

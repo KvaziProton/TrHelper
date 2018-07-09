@@ -39,6 +39,7 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     symbols_amount = models.IntegerField()
     published = models.DateTimeField(auto_now_add=True)
+    is_eng = models.BooleanField(default=True)
     #автоматически ставит дату-время (datetime.datetime)
     #при каждом сохранении inst.save()
     #даные берет из настроек timezone
@@ -53,7 +54,8 @@ class Article(models.Model):
 class TranslationStatistic(models.Model):
     translator = models.ForeignKey(
         Translator,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True, blank=True
         )
     article = models.OneToOneField(
         Article,

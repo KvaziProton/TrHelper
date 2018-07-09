@@ -1,4 +1,8 @@
-Django=2.0.7
+django=2.0.7
 djangorestframework=3.8.2
 Celery=4.2.0
 rabbitmq
+bs4=0.0.1
+requests=2.19.1
+lxml=2.4.3
+pytest=3.6.3
