@@ -6,3 +6,7 @@ bs4=0.0.1
 requests=2.19.1
 lxml=2.4.3
 pytest=3.6.3
+django_celery_beat=1.1.1
+celerybeat_status
+numpy=1.14.5
+Pillow=5.2.0

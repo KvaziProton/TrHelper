@@ -7,6 +7,7 @@ from .models import Article
 # from .serializers import ArticleAddSer
 from rest_framework.renderers import TemplateHTMLRenderer
 from .tasks import articles_queue, check_if_new
+import datetime
 
 class ArticleFlow(APIView):
 
@@ -23,7 +24,6 @@ class ArticleFlow(APIView):
                 json[i] = data.__dict__
             content = JSONRenderer().render(json)
             return Response(content)
-        #if we wanna show article flow
 
 #draft for handle buttom click
         if 'ajax-send' in request.data:
@@ -36,9 +36,9 @@ class ArticleFlow(APIView):
 
 #draft for main flow
         else:
-            check_if_new()
-            queryset = Article.objects.order_by('-published')[:20] #last 20! not all)
-            return Response({'articles': queryset})
+            #check_if_new.delay()
+            queryset = Article.objects.order_by('-published')[:20]
+            return Response({'articles': queryset, 'date_today': datetime.date.today()})
 
     #     #if we wanna manually add article
     # def post(self, request, format=None):

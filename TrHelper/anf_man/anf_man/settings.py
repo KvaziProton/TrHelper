@@ -1,7 +1,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = '+1f#b*7qe50+$z3i#l5hhk4ex)7h3$9yqzd1y_-*2+z3daf)8#'
+SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -20,6 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tr_helper',
     'rest_framework',
+    'celerybeat_status',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -106,3 +108,19 @@ LOGOUT_REDIRECT_URL = 'main'
 
 
 CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_IGNORE_RESULT = True
+
+# CELERY_QUEUES = (
+#     Queue('high', Exchange('high'), routing_key='high'),
+#     Queue('normal', Exchange('normal'), routing_key='normal'),
+#     Queue('low', Exchange('low'), routing_key='low'),
+# )
+# CELERY_DEFAULT_QUEUE = 'normal'
+# CELERY_DEFAULT_EXCHANGE = 'normal'
+# CELERY_DEFAULT_ROUTING_KEY = 'normal'
+# CELERY_ROUTES = {
+#     # -- HIGH PRIORITY QUEUE -- #
+#     'myapp.tasks.check_payment_status': {'queue': 'high'},
+#     # -- LOW PRIORITY QUEUE -- #
+#     'myapp.tasks.close_session': {'queue': 'low'},
+# }
