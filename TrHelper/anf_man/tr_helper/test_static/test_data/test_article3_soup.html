@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <script src="/cdn-cgi/apps/head/zjsCC3PdMmyTPx_P8g37860CjoA.js">
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   ANF | MLKP guerrillas join the defense of Southern Kurdistan
+  </title>
+  <link href="/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/favicon.png" rel="icon" type="image/x-icon"/>
+  <link href="/build/css/vendors.css?20180123v1" rel="stylesheet"/>
+  <link href="/css/style.css?20180123v1" rel="stylesheet"/>
+  <meta content="ANF News" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="MLKP guerrillas join the defense of Southern Kurdistan" property="og:title"/>
+  <meta content="Marxist Leninist Communist Party (MLKP) FESK guerrillas have announced their participation in the resistance to defend the lands of Southern Kurdistan against occupation attacks of the Turkish army..." property="og:description"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg" property="og:image"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg" property="og:image:secure_url"/>
+  <meta content="https://anfenglish.com/kurdistan/mlkp-guerrillas-join-the-defense-of-southern-kurdistan-28303" property="og:url"/>
+  <meta property="fb:app_id"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta name="twitter:site"/>
+  <meta name="twitter:creator"/>
+  <meta content="MLKP guerrillas join the defense of Southern Kurdistan" name="twitter:title"/>
+  <meta content="Marxist Leninist Communist Party (MLKP) FESK guerrillas have announced their participation in the resistance to defend the lands of Southern Kurdistan against occupation attacks of the Turkish army..." name="twitter:description"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg" name="twitter:image"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ </head>
+ <body class="lang_en ">
+  <header id="navigation">
+   <div class="navbar" role="banner">
+    <div class="topbar">
+     <div class="container">
+      <div class="navbar-header" id="topbar">
+       <a class="navbar-brand" href="/">
+        <img alt="logo" class="main-logo img-responsive" src="/img/logo.png"/>
+       </a>
+       <div id="topbar-right">
+        <div class="language-list">
+         <ul>
+          <li>
+           <a href="https://anfturkce.net">
+            Türkçe
+           </a>
+          </li>
+          <li>
+           <a href="https://anfkurdi.com">
+            Kurdî
+           </a>
+          </li>
+          <li>
+           <a href="https://anfarabic.com">
+            العربية
+           </a>
+          </li>
+          <li>
+           <a href="https://anfpersian.com">
+            فارسی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfespanol.com">
+            Español
+           </a>
+          </li>
+          <li>
+           <a href="https://anfdeutsch.com">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a href="https://anfsorani.com">
+            کوردی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfrussian.com">
+            Pу́сский
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="dropdown language-dropdown">
+         <a class="needsclick" data-toggle="dropdown" href="#">
+          <span class="change-text">
+           English
+          </span>
+          <i class="fa fa-angle-down">
+          </i>
+         </a>
+         <ul class="dropdown-menu language-change">
+          <li>
+           <a href="https://anfturkce.net">
+            Türkçe
+           </a>
+          </li>
+          <li>
+           <a href="https://anfenglish.com">
+            English
+           </a>
+          </li>
+          <li>
+           <a href="https://anfkurdi.com">
+            Kurdî
+           </a>
+          </li>
+          <li>
+           <a href="https://anfarabic.com">
+            العربية
+           </a>
+          </li>
+          <li>
+           <a href="https://anfpersian.com">
+            فارسی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfespanol.com">
+            Español
+           </a>
+          </li>
+          <li>
+           <a href="https://anfdeutsch.com">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a href="https://anfsorani.com">
+            کوردی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfrussian.com">
+            Pу́сский
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div id="date-time">
+         Wednesday, 18 Jul 2018
+        </div>
+       </div>
+       <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">
+         Toggle navigation
+        </span>
+        <span class="icon-bar">
+        </span>
+        <span class="icon-bar">
+        </span>
+        <span class="icon-bar">
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="container" id="menubar">
+     <nav class="navbar-left collapse navbar-collapse" id="mainmenu">
+      <ul class="nav navbar-nav">
+       <li>
+        <a href="/kurdistan">
+         Kurdistan
+        </a>
+       </li>
+       <li>
+        <a href="/news">
+         News
+        </a>
+       </li>
+       <li>
+        <a href="/rojava">
+         Rojava
+        </a>
+       </li>
+       <li>
+        <a href="/features">
+         Features
+        </a>
+       </li>
+       <li>
+        <a href="/women">
+         Women
+        </a>
+       </li>
+       <li>
+        <a href="/freedom-of-the-press">
+         Freedom of the Press
+        </a>
+       </li>
+       <li>
+        <a href="/human-rights">
+         Human Rights
+        </a>
+       </li>
+       <li>
+        <a href="/culture">
+         Culture
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <div class="search-button">
+      <ul>
+       <li class="search-icon">
+        <i class="fa fa-search">
+        </i>
+       </li>
+      </ul>
+      <div class="search">
+       <form action="/articles/search" lpformnum="1" method="GET" role="form">
+        <input autocomplete="off" class="search-form" name="q" placeholder="Type &amp; Press Enter" type="text"/>
+       </form>
+      </div>
+      <!--/.search-->
+     </div>
+     <!-- search-button -->
+    </div>
+   </div>
+  </header>
+  <section class="container wrapper">
+   <section class="content">
+    <section class="article">
+     <div class="row">
+      <div class="col-sm-8">
+       <article class="post">
+        <div class="post-content">
+         <h2 class="entry-title">
+          MLKP guerrillas join the defense of Southern Kurdistan
+         </h2>
+         <p class="entry-lead">
+          MLKP FESK guerrillas said; “We will defend every inch of Kurdistan lands like in Kobanê, Nusaybin and Afrin.”
+         </p>
+        </div>
+        <div class="post-header">
+         <div class="entry-thumbnail">
+          <img alt="" class="img-responsive" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg"/>
+         </div>
+        </div>
+        <div class="post-content">
+         <div class="entry-meta">
+          <ul class="list-inline">
+           <li class="writer">
+            <i class="fa fa-user">
+            </i>
+            ANF
+           </li>
+           <li class="map-marker">
+            <i class="fa fa-map-marker">
+            </i>
+            BEHDINAN
+           </li>
+           <li class="publish-date">
+            <i class="fa fa-clock-o">
+            </i>
+            Tuesday, 17 Jul 2018, 11:40
+           </li>
+          </ul>
+         </div>
+         <aside id="share">
+         </aside>
+         <div class="entry-content">
+          <p>
+           Marxist Leninist Communist Party (MLKP) FESK guerrillas have announced their participation in the resistance to defend the lands of Southern Kurdistan against occupation attacks of the Turkish army.
+          </p>
+          <p>
+           The guerrillas held a press briefing in Southern Kurdistan before heading to their positions. MLKP fighters Erdal Tîrêj and Dicle Awaz held a speech on behalf of guerrillas.
+          </p>
+          <p>
+           MLKP/KKÖ fighter Dicle Awaz said that; “We are taking our place in the battle field alongside our comrades against the Turkish army’s occupation attacks on Southern Kurdistan.
+          </p>
+          <p>
+           Awaz recalled that they lost maiy fighters in Southern Kurdistan lands where they have been present for years, saying; “We will not allow the fascist, occupant, colonialist Turkish army to defile the free areas where each martyr of ours has footprints. We will not allow the colonialist forces nor their collaborators to pass through these areas which thousands of martyrs liberated with their blood.”
+          </p>
+          <p>
+           Awaz stressed that MLKP female guerrillas are also a part of the resistance in guerrilla-held Medya Defense Zones just like they were in the self-governance resistance and the women’s revolution in Rojava. “We will raise the spirit and flag of our women martyrs in Medya Defense Zones, every inch of which we will defend until the last drop of blood and last bullet. We will allow neither Rojava women’s revolution nor our free areas to be defiled or choked by fascist invaders.”
+          </p>
+          <p>
+           Awaz continued, calling on all the peoples, mainly young women and youth to take their place in the battlefield against the occupation attacks and defend the free mountains.
+          </p>
+          <p>
+           Recalling that Medya Defense Zones have fostered the struggle of four parts of Kurdistan and raised commanders for dozens of years, Awaz said; “Like in Qandil, Xakurkê, Bradost and Kobanê, we will enhance the struggle with the spirit of martyrs and not allow the occupation attacks of the fascist Turkish state to triumph.”
+          </p>
+          <p>
+           Speaking after, MLKP guerrilla Erdal Tîrêj said the following; “Our party MLKP will not be a mere spectator in the face of the attacks targeting the Kurdish Freedom Movement and Kurdish nation. We are fighters who believe that the Kurdish people, who are under colonialism, must definitely be free in order for the emancipation of the Turkish people as well.”
+          </p>
+          <p>
+           Recalling that the fascist Turkish state is preparing to occupy Qandil, MLKP guerrilla Tîrêj ended with the following words; “We, MLKP fighters, have taken up our arms to defend the lands of Southern Kurdistan, every inch in Metina, Zap, Xinere, Xakurkê and Bradost. Alongside our comrades from HPG (People’s Defense Forces) and YJA-Star (Free Women’s Troops), we will defend Southern Kurdistan lands at the cost of our lives. If the fascist occupant Turkish troops are to come here, they will get what’s coming to them.”
+          </p>
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="col-sm-4 sidebar">
+       <div class="compact">
+        <h2 class="section-title title">
+         Most read
+        </h2>
+        <ul class="post-list">
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-mlkp-fesk7a177b-image89f4e5-imageeac22e-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/mlkp-guerrillas-join-the-defense-of-southern-kurdistan-28303">
+              MLKP guerrillas join the defense of Southern Kurdistan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180601-ypj-270f3a010-image23edee-imageeedba9-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180601-ypj-270f3a010-image23edee-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/ypg-at-least-12-terrorists-have-been-killed-in-afrin-28304">
+              YPG: At least 12 terrorists have been killed in Afrin
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-qandil6241bf-imagea90fb5-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-qandil6241bf-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/22-internationalists-join-the-human-shields-action-in-qandil-28298">
+              22 internationalists join the human shields action in Qandil
+              <span class="title-icons">
+               <i class="fa fa-picture-o">
+               </i>
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-20180715-690x390cc-mrk-15-07-2018-meryem-fereci4612b3-image0904db-image14fe61-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-690x390cc-mrk-15-07-2018-meryem-fereci4612b3-image0904db-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/kurdish-student-disappeared-in-iran-tortured-to-death-28260">
+              Kurdish student ‘disappeared’ in Iran tortured to death
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180717-yja-star-35007226c-image752b72-image410dc2-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180717-yja-star-35007226c-image752b72-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/hpg-hit-turkish-forces-in-barzan-28314">
+              HPG hit Turkish forces in Barzan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180301-makerojavagreenagain8f6ff6-image0928d0-imageba5a04-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180301-makerojavagreenagain8f6ff6-image0928d0-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/make-rojava-green-again-a-book-by-the-internationalist-commune-28309">
+              Make Rojava green again, a book by the Internationalist Commune
+              <span class="title-icons">
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-1a7a0fe-imageb52e0b-imagef1618f-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-1a7a0fe-imageb52e0b-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/4-yrk-guerrillas-martyred-in-eastern-kurdistan-28306">
+              4 YRK guerrillas martyred in Eastern Kurdistan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-irak-ta-gosteriler-buyudu-baskentte-internet-kesildi-1531565911ff0b55-imagedfed37-image7418dc-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-irak-ta-gosteriler-buyudu-baskentte-internet-kesildi-1531565911ff0b55-imagedfed37-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/protests-continue-in-iraq-despite-curfew-28311">
+              Protests continue in Iraq despite curfew
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="compact">
+        <h2 class="section-title title">
+         More in Kurdistan
+        </h2>
+        <ul class="post-list">
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180717-690x390cc-dyb-17-07-2018-hpgli-yakisir-taziye-baskin-1e6b20d-image7c802e-image713b79-thumb.jpeg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180717-690x390cc-dyb-17-07-2018-hpgli-yakisir-taziye-baskin-1e6b20d-image7c802e-image.jpeg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/4-detained-as-police-raid-the-funeral-home-of-a-guerrilla-in-amed-28327">
+              4 detained as police raid the funeral home of a guerrilla in Amed
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180717-77ce5180-imagef7e84d-image836043-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180717-77ce5180-imagef7e84d-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/high-prison-sentences-for-22-kurdish-politicians-in-urfa-28323">
+              High prison sentences for 22 Kurdish politicians in Urfa
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-gabar79d859-imagec1e998-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-gabar79d859-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/turkish-attacks-start-huge-wildfire-in-Sirnak-countryside-28317">
+              Turkish attacks start huge wildfire in Şırnak countryside
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-1a7a0fe-imageb52e0b-imagef1618f-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-1a7a0fe-imageb52e0b-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/4-yrk-guerrillas-martyred-in-eastern-kurdistan-28306">
+              4 YRK guerrillas martyred in Eastern Kurdistan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-101708256563e0d6-image006b0b-image98a315-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-101708256563e0d6-image006b0b-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/turkish-military-operation-in-besta-28302">
+              Turkish military operation in Besta
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-qandil6241bf-imagea90fb5-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-qandil6241bf-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/kurdistan/22-internationalists-join-the-human-shields-action-in-qandil-28298">
+              22 internationalists join the human shields action in Qandil
+              <span class="title-icons">
+               <i class="fa fa-picture-o">
+               </i>
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+   </section>
+  </section>
+  <footer>
+   <div class="footer-wrapper">
+    <div class="container">
+     <p>
+      <a href="/">
+       Home
+      </a>
+      |
+      <a href="/contact">
+       Impressum &amp; Contact
+      </a>
+      |
+      <a href="/feed.rss">
+       RSS Feed
+      </a>
+      |
+      <span>
+       Copyright © Ajansa Nûçeyan a Firatê 2018. All Rights Reserved
+      </span>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <!-- /.container -->
+  <script src="/build/js/vendors.min.js?20180123v1">
+  </script>
+  <script src="/js/app.js?20180123v1">
+  </script>
+  <script>
+   $().ready(function(){
+
+	jsSocials.setDefaults("facebook", {
+	    label: "Share",
+	});
+	
+	jsSocials.setDefaults("twitter", {
+	    text: "MLKP guerrillas join the defense of Southern Kurdistan",
+	});
+	
+	$("#share").jsSocials({
+		shareIn: "popup",
+	    shares: ["facebook", "twitter", "email", "whatsapp", "telegram"]
+	});
+
+	$.get('/articles/hit/' + 28303);
+
+});
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"554a87dbfd","applicationID":"45386782","transactionName":"YQFRZBMFW0dRAUNeWFhLZkIIS1xaVAdPGUdeFA==","queueTime":0,"applicationTime":26,"atts":"TUZSElsfSEk=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>

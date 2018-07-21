@@ -10,3 +10,4 @@ django_celery_beat=1.1.1
 celerybeat_status
 numpy=1.14.5
 Pillow=5.2.0
+python-Levenshtein=0.12.0

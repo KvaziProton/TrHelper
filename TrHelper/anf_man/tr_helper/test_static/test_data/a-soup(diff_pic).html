@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <script src="/cdn-cgi/apps/head/zjsCC3PdMmyTPx_P8g37860CjoA.js">
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   ANF | Turkish state barbarism in Afrin knows no bounds
+  </title>
+  <link href="/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/favicon.png" rel="icon" type="image/x-icon"/>
+  <link href="/build/css/vendors.css?20180123v1" rel="stylesheet"/>
+  <link href="/css/style.css?20180123v1" rel="stylesheet"/>
+  <meta content="ANF News" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="Turkish state barbarism in Afrin knows no bounds" property="og:title"/>
+  <meta content="Since the Turkish state and their allied gangs invaded Afrin, the looting, robbery, massacres, rapes and damage to the environment continue to increase. The Turkish state has left no place to live ..." property="og:description"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180709-afc6785b-image.jpg" property="og:image"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180709-afc6785b-image.jpg" property="og:image:secure_url"/>
+  <meta content="https://anfenglish.com/features/turkish-state-barbarism-in-afrin-knows-no-bounds-28101" property="og:url"/>
+  <meta property="fb:app_id"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta name="twitter:site"/>
+  <meta name="twitter:creator"/>
+  <meta content="Turkish state barbarism in Afrin knows no bounds" name="twitter:title"/>
+  <meta content="Since the Turkish state and their allied gangs invaded Afrin, the looting, robbery, massacres, rapes and damage to the environment continue to increase. The Turkish state has left no place to live ..." name="twitter:description"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180709-afc6785b-image.jpg" name="twitter:image"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ </head>
+ <body class="lang_en ">
+  <header id="navigation">
+   <div class="navbar" role="banner">
+    <div class="topbar">
+     <div class="container">
+      <div class="navbar-header" id="topbar">
+       <a class="navbar-brand" href="/">
+        <img alt="logo" class="main-logo img-responsive" src="/img/logo.png"/>
+       </a>
+       <div id="topbar-right">
+        <div class="language-list">
+         <ul>
+          <li>
+           <a href="https://anfturkce.net">
+            Türkçe
+           </a>
+          </li>
+          <li>
+           <a href="https://anfkurdi.com">
+            Kurdî
+           </a>
+          </li>
+          <li>
+           <a href="https://anfarabic.com">
+            العربية
+           </a>
+          </li>
+          <li>
+           <a href="https://anfpersian.com">
+            فارسی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfespanol.com">
+            Español
+           </a>
+          </li>
+          <li>
+           <a href="https://anfdeutsch.com">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a href="https://anfsorani.com">
+            کوردی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfrussian.com">
+            Pу́сский
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="dropdown language-dropdown">
+         <a class="needsclick" data-toggle="dropdown" href="#">
+          <span class="change-text">
+           English
+          </span>
+          <i class="fa fa-angle-down">
+          </i>
+         </a>
+         <ul class="dropdown-menu language-change">
+          <li>
+           <a href="https://anfturkce.net">
+            Türkçe
+           </a>
+          </li>
+          <li>
+           <a href="https://anfenglish.com">
+            English
+           </a>
+          </li>
+          <li>
+           <a href="https://anfkurdi.com">
+            Kurdî
+           </a>
+          </li>
+          <li>
+           <a href="https://anfarabic.com">
+            العربية
+           </a>
+          </li>
+          <li>
+           <a href="https://anfpersian.com">
+            فارسی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfespanol.com">
+            Español
+           </a>
+          </li>
+          <li>
+           <a href="https://anfdeutsch.com">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a href="https://anfsorani.com">
+            کوردی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfrussian.com">
+            Pу́сский
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div id="date-time">
+         Wednesday, 18 Jul 2018
+        </div>
+       </div>
+       <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">
+         Toggle navigation
+        </span>
+        <span class="icon-bar">
+        </span>
+        <span class="icon-bar">
+        </span>
+        <span class="icon-bar">
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="container" id="menubar">
+     <nav class="navbar-left collapse navbar-collapse" id="mainmenu">
+      <ul class="nav navbar-nav">
+       <li>
+        <a href="/kurdistan">
+         Kurdistan
+        </a>
+       </li>
+       <li>
+        <a href="/news">
+         News
+        </a>
+       </li>
+       <li>
+        <a href="/rojava">
+         Rojava
+        </a>
+       </li>
+       <li>
+        <a href="/features">
+         Features
+        </a>
+       </li>
+       <li>
+        <a href="/women">
+         Women
+        </a>
+       </li>
+       <li>
+        <a href="/freedom-of-the-press">
+         Freedom of the Press
+        </a>
+       </li>
+       <li>
+        <a href="/human-rights">
+         Human Rights
+        </a>
+       </li>
+       <li>
+        <a href="/culture">
+         Culture
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <div class="search-button">
+      <ul>
+       <li class="search-icon">
+        <i class="fa fa-search">
+        </i>
+       </li>
+      </ul>
+      <div class="search">
+       <form action="/articles/search" lpformnum="1" method="GET" role="form">
+        <input autocomplete="off" class="search-form" name="q" placeholder="Type &amp; Press Enter" type="text"/>
+       </form>
+      </div>
+      <!--/.search-->
+     </div>
+     <!-- search-button -->
+    </div>
+   </div>
+  </header>
+  <section class="container wrapper">
+   <section class="content">
+    <section class="article">
+     <div class="row">
+      <div class="col-sm-8">
+       <article class="post">
+        <div class="post-content">
+         <h2 class="entry-title">
+          Turkish state barbarism in Afrin knows no bounds
+         </h2>
+         <p class="entry-lead">
+          The Turkish state barbarism in Afrin knows no bounds. The invading Turkish state and their allied gangs continue to commit crimes against humanity in Afrin, as international states sit and watch the atrocities.
+         </p>
+        </div>
+        <div class="post-header">
+         <div class="entry-thumbnail">
+          <img alt="" class="img-responsive" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-bilgen0bfca2-image.jpg"/>
+         </div>
+        </div>
+        <div class="post-content">
+         <div class="entry-meta">
+          <ul class="list-inline">
+           <li class="writer">
+            <i class="fa fa-user">
+            </i>
+            ANF - MUHAMMED HÜSEYİN
+           </li>
+           <li class="map-marker">
+            <i class="fa fa-map-marker">
+            </i>
+            SHEHBA
+           </li>
+           <li class="publish-date">
+            <i class="fa fa-clock-o">
+            </i>
+            Monday,  9 Jul 2018, 13:00
+           </li>
+          </ul>
+         </div>
+         <aside id="share">
+         </aside>
+         <div class="entry-content">
+          <p>
+           Since the Turkish state and their allied gangs invaded Afrin, the looting, robbery, massacres, rapes and damage to the environment continue to increase. The Turkish state has left no place to live for the people in Afrin, and families subjected to their tyranny flee the city with one last hope to save themselves, despite all hardship and risking death. X.H. is one of the people who witnessed months of barbarism and managed to flee. X.H. spoke to the ANF about what they went through in Afrin for 3 months.
+          </p>
+          <div data-oembed-url="http://anfnews.tv/files/1656-barbariya-dewleta-tirk-a-li-efrine-sinoran-nas-nak.mp4">
+           <div>
+            <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+             <iframe allowfullscreen="" src="//cdn.iframe.ly/YY3oj2d" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" tabindex="-1">
+             </iframe>
+            </div>
+           </div>
+           <script async="" charset="utf-8" src="//cdn.iframe.ly/embed.js">
+           </script>
+          </div>
+          <p>
+          </p>
+          <p>
+           <strong>
+            THEY CONFISCATED ALL BELONGINGS OF THE PEOPLE
+           </strong>
+          </p>
+          <p>
+           X.H. said the people have no chance to live in Afrin city center or its villages anymore, and that they can live with all kinds of hardship, but they won’t consent to living under the Turkish state invasion. X.H. said he, his wife and their children stayed in the Maratê village of Afrin for 3 months and spoke of the hardship: “My house was hit by jets. It was in ruins. I had left Afrin 3 days ago.
+          </p>
+          <p>
+           We saw the tyranny and treason. They were capturing people and confiscating all they had, they were torturing people and demanded very high ransoms. They arrested me. I was left in jail for 10 days. They had turned a house into a jail, where they tortured me. I promised them money to save myself. They let me go on condition that I bring them 5.000 dollars in 5 days. But we had no money. We are unemployed, the roads are blocked, they left no option for us to work. They already take all that the people have. They take the last cents people have, even if it means they kill them.”
+          </p>
+          <p>
+           <strong>
+            WE WILL LIVE IN THE DESERT BUT WE WON’T CONSENT TO SUCH LIFE
+           </strong>
+          </p>
+          <p>
+           X.H. said he fled Afrin with his mother, father, wife and children before the 5 days were up: “My father is 80 years old, my mother 70, and my children are young. The children were left hungry and thirsty on the road. But we risked everything. We want our voice heard. We are right by our village, our city, our lands, but we can’t go due to fear.
+          </p>
+          <p>
+           International humanitarian organizations and states should speak up. Now we are in the Serdem Camp. We have more peace of mind here. But we didn’t have it there, even though it was our home, our lands. We will live in this desert, but we won’t consent to such a life. We want this to be seen. We want this tyranny and invasion to be visible.”
+          </p>
+          <p>
+           <strong>
+            THEY THROW PEOPLE DOWN WELLS AND KILL UNBORN BABIES
+           </strong>
+          </p>
+          <p>
+           X.H. said dozens of women have been abducted in almost all villages, and that most of them don’t return. X.H. continued: “For them, every Kurd in Afrin is an Apoist. They throw people down wells, they kill unborn babies. What do trees have to do with Apoism and being Kurdish - they are cutting down the trees. There is torture, theft, what have you, all present in Afrin. Theft is normal there with the Turkish state.
+          </p>
+          <p>
+           They took all that we had in my home too. They took doors, windows, they even tore out cables. My home is completely demolished. They abduct women. They have abducted women in many villages, and only 1 out of 20 women return. They take them for themselves. These are all documented. They only care for money, that is their religion.”
+          </p>
+          <p>
+           <strong>
+            SHAME TO TALK ABOUT WHAT IS HAPPENING
+           </strong>
+          </p>
+          <p>
+           X.H. stressed that the Turkish state and their gangs steal money from the people: “To take the money, they accuse the people with various excuses. They say the person is with the organization, they worked for them, so they must give $ 5.000, or 7.000. We have no jobs, and no money. How will we pay? They kill animals, they kill nature, they kill children, the elderly, and they imprison people. When we say we don’t have any money, they tell us their jails are great, so we can stay there until we have the money.
+          </p>
+          <p>
+           The prison in Afrin is now full. There was one prison in Matê, now there are 300 people there. The children all families have been looking for everywherewere taken to this prison. These are the ones I know of, they killed many people. They built a prison of their own in every village. It is a shame to even talk about what is happening in Afrin.”
+          </p>
+          <p>
+           <strong>
+            THEY EXTORT PEOPLE
+           </strong>
+          </p>
+          <p>
+           X.H. said they used to have a home in Afrin center and that they moved to a village after the Turkish state invaded. X.H. said they settled in 7 villages in total, but they never were comfortable enough to continue their lives: “They threaten people to bring their relatives outside of Afrin into the city. They say people must either bring relatives or pay. Or they demolish their home and disappear their children.”
+          </p>
+          <p>
+           They fine people one million Syrian Liras, and if the person is able to bring a family in to Afrin, they pay half the fine each. In every village, they fine people for not bringing in their relatives. Now families in every village have to pay them 200.000 Syrian Liras every month. This tyranny happens in all 360 villages of Afrin.”
+          </p>
+          <p>
+           <strong>
+            ERDOĞAN CAME TO AFRIN FOR A GENOCIDE
+           </strong>
+          </p>
+          <p>
+           X.H. said the Turkish President Tayyip Erdoğan used YPG/YPJ as an excuse to attack Afrin and continued: “What they do is actual terror. Was the baby in the womb a YPG or a YPJ member? The houses they demolished, the trees they cut off, the animals they exterminated, what is the excuse for them? Everybody saw it, they killed dozens of children and elderly people. Dozens of people lost their feet, their hands, their eyes.
+          </p>
+          <p>
+           They destroyed everything in Afrin. They left nothing behind that is beautiful. Erdoğan’s target wasn’t just YPG or YPJ. He was aiming for a genocide. For a massacre. And he did do it. He continues to do so. All international humanitarian organizations and states should speak up. Everybody can see this tyranny now. This issue must be resolved at once. We have no house left, no garden, no trees, we lost everything. We don’t want anything from anybody. We just want to go back to our old life.”
+          </p>
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="col-sm-4 sidebar">
+       <div class="compact">
+        <h2 class="section-title title">
+         Most read
+        </h2>
+        <ul class="post-list">
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-mlkp-fesk7a177b-image89f4e5-imageeac22e-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/mlkp-guerrillas-join-the-defense-of-southern-kurdistan-28303">
+              MLKP guerrillas join the defense of Southern Kurdistan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180601-ypj-270f3a010-image23edee-imageeedba9-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180601-ypj-270f3a010-image23edee-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/ypg-at-least-12-terrorists-have-been-killed-in-afrin-28304">
+              YPG: At least 12 terrorists have been killed in Afrin
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-qandil6241bf-imagea90fb5-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-qandil6241bf-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/22-internationalists-join-the-human-shields-action-in-qandil-28298">
+              22 internationalists join the human shields action in Qandil
+              <span class="title-icons">
+               <i class="fa fa-picture-o">
+               </i>
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-20180715-690x390cc-mrk-15-07-2018-meryem-fereci4612b3-image0904db-image14fe61-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-690x390cc-mrk-15-07-2018-meryem-fereci4612b3-image0904db-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/kurdish-student-disappeared-in-iran-tortured-to-death-28260">
+              Kurdish student ‘disappeared’ in Iran tortured to death
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180717-yja-star-35007226c-image752b72-image410dc2-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180717-yja-star-35007226c-image752b72-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/hpg-hit-turkish-forces-in-barzan-28314">
+              HPG hit Turkish forces in Barzan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180301-makerojavagreenagain8f6ff6-image0928d0-imageba5a04-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180301-makerojavagreenagain8f6ff6-image0928d0-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/make-rojava-green-again-a-book-by-the-internationalist-commune-28309">
+              Make Rojava green again, a book by the Internationalist Commune
+              <span class="title-icons">
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-1a7a0fe-imageb52e0b-imagef1618f-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-1a7a0fe-imageb52e0b-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/4-yrk-guerrillas-martyred-in-eastern-kurdistan-28306">
+              4 YRK guerrillas martyred in Eastern Kurdistan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-irak-ta-gosteriler-buyudu-baskentte-internet-kesildi-1531565911ff0b55-imagedfed37-image7418dc-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-irak-ta-gosteriler-buyudu-baskentte-internet-kesildi-1531565911ff0b55-imagedfed37-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/protests-continue-in-iraq-despite-curfew-28311">
+              Protests continue in Iraq despite curfew
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="compact">
+        <h2 class="section-title title">
+         More in Features
+        </h2>
+        <ul class="post-list">
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180716-untitled-26cd861-image697aaf-image0e8bdd-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180716-untitled-26cd861-image697aaf-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/what-is-happening-in-iraq-28305">
+              What is happening in Iraq?
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180716-20180716-20180716-mustafa-karasu-1ea887b-image6b6049-image97f93d-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180716-20180716-mustafa-karasu-1ea887b-image6b6049-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/kck-s-karasu-no-news-about-leader-Oecalan-28292">
+              KCK’s Karasu: No news about Leader Öcalan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180716-20180716-20180716-20180716-11332432425252522f8ba2b-imagedc8822-image457638-imagef0a355-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180716-20180716-20180716-11332432425252522f8ba2b-imagedc8822-image457638-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/hpg-commander-qandil-war-a-battle-to-defend-southern-kurdistan-28280">
+              HPG Commander: Qandil war a battle to defend Southern Kurdistan
+              <span class="title-icons">
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-2018-07-14-20-41-23fe5114-image776900-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180715-2018-07-14-20-41-23fe5114-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/interview-with-farc-president-rodrigo-londono-timochenko-28269">
+              Interview with FARC president Rodrigo Londoño, Timochenko
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-20171026-gr57e4af-image54e93f-image84ec8e-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20171026-gr57e4af-image54e93f-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/political-annihilation-campaign-against-kurds-in-germany-28259">
+              Political annihilation campaign against Kurds in Germany
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180713-20180713-20180713-img-671240f655-image053542-imagefff7f6-thumb.JPG" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180713-20180713-img-671240f655-image053542-image.JPG 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/features/hpg-commander-it-s-not-easy-to-enter-or-leave-these-lands-28214">
+              HPG Commander: It’s not easy to enter or leave these lands
+              <span class="title-icons">
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+   </section>
+  </section>
+  <footer>
+   <div class="footer-wrapper">
+    <div class="container">
+     <p>
+      <a href="/">
+       Home
+      </a>
+      |
+      <a href="/contact">
+       Impressum &amp; Contact
+      </a>
+      |
+      <a href="/feed.rss">
+       RSS Feed
+      </a>
+      |
+      <span>
+       Copyright © Ajansa Nûçeyan a Firatê 2018. All Rights Reserved
+      </span>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <!-- /.container -->
+  <script src="/build/js/vendors.min.js?20180123v1">
+  </script>
+  <script src="/js/app.js?20180123v1">
+  </script>
+  <script>
+   $().ready(function(){
+
+	jsSocials.setDefaults("facebook", {
+	    label: "Share",
+	});
+
+	jsSocials.setDefaults("twitter", {
+	    text: "Turkish state barbarism in Afrin knows no bounds",
+	});
+
+	$("#share").jsSocials({
+		shareIn: "popup",
+	    shares: ["facebook", "twitter", "email", "whatsapp", "telegram"]
+	});
+
+	$.get('/articles/hit/' + 28101);
+
+});
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"554a87dbfd","applicationID":"45386782","transactionName":"YQFRZBMFW0dRAUNeWFhLZkIIS1xaVAdPGUdeFA==","queueTime":0,"applicationTime":34,"atts":"TUZSElsfSEk=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>

@@ -1,6 +1,18 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<form action="" method="post">
+  <input type="text" name="Введите url:" id="input-url"/>
+  <input type="submit" name="user-add" value="Добавить" id="btm-add"/>
+</form>
+<div>
+  {{ status }}
+  {{ data }}
+  {% if not added %}
+    <input type="submit" name="sure" value="Все равно добавить?" id="btm-sure" article_url="{{ data.url }}" />
+  {% endif %}
+</div>
+
 <table>
   <tr>
     <td class="date-title">
@@ -12,9 +24,19 @@
     </td>
   </tr>
   {% for article in articles %}
+    {% if date_today != article.published.date %}
+      <tr>
+        <td class="date-title">
+          {{ date_today }}
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+      </tr>
+    {% endif %}
     <tr>
       <td>
-        {{ article.published.date }}
         {{ article.published.time }}
       </td>
       <td>
@@ -24,7 +46,7 @@
         {{ article.symbols_amount }} symbols
       </td>
       <td>
-        <input type="submit" value="Перевести" class="btm" article_id="{{ article.id }}"/>
+        <input type="submit" value="Перевести" name="action" article_id="{{ article.id }}"/>
       </td>
     </tr>
     {% endfor %}

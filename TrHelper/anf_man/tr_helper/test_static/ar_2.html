@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <script src="/cdn-cgi/apps/head/zjsCC3PdMmyTPx_P8g37860CjoA.js">
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   ANF | Turkish state cuts off waters of Euphrates again
+  </title>
+  <link href="/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/favicon.png" rel="icon" type="image/x-icon"/>
+  <link href="/build/css/vendors.css?20180123v1" rel="stylesheet"/>
+  <link href="/css/style.css?20180123v1" rel="stylesheet"/>
+  <meta content="ANF News" property="og:site_name"/>
+  <meta content="article" property="og:type"/>
+  <meta content="Turkish state cuts off waters of Euphrates again" property="og:title"/>
+  <meta content="The Turkish government has once again restricted the flow of the Euphrates River into Syria. The Turkish state has been using the river as a weapon against the Syrian peoples who have been living u..." property="og:description"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180707-120207-menbic-artesa-turik-a-dagerkir-avi-leser-gelen-mennbci-qot-kir593f43-image.jpg" property="og:image"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180707-120207-menbic-artesa-turik-a-dagerkir-avi-leser-gelen-mennbci-qot-kir593f43-image.jpg" property="og:image:secure_url"/>
+  <meta content="https://anfenglish.com/rojava/turkish-state-cuts-off-waters-of-euphrates-again-28053" property="og:url"/>
+  <meta property="fb:app_id"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta name="twitter:site"/>
+  <meta name="twitter:creator"/>
+  <meta content="Turkish state cuts off waters of Euphrates again" name="twitter:title"/>
+  <meta content="The Turkish government has once again restricted the flow of the Euphrates River into Syria. The Turkish state has been using the river as a weapon against the Syrian peoples who have been living u..." name="twitter:description"/>
+  <meta content="https://anfenglish.com/uploads/en/articles/2018/07/20180707-120207-menbic-artesa-turik-a-dagerkir-avi-leser-gelen-mennbci-qot-kir593f43-image.jpg" name="twitter:image"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ </head>
+ <body class="lang_en ">
+  <header id="navigation">
+   <div class="navbar" role="banner">
+    <div class="topbar">
+     <div class="container">
+      <div class="navbar-header" id="topbar">
+       <a class="navbar-brand" href="/">
+        <img alt="logo" class="main-logo img-responsive" src="/img/logo.png"/>
+       </a>
+       <div id="topbar-right">
+        <div class="language-list">
+         <ul>
+          <li>
+           <a href="https://anfturkce.net">
+            Türkçe
+           </a>
+          </li>
+          <li>
+           <a href="https://anfkurdi.com">
+            Kurdî
+           </a>
+          </li>
+          <li>
+           <a href="https://anfarabic.com">
+            العربية
+           </a>
+          </li>
+          <li>
+           <a href="https://anfpersian.com">
+            فارسی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfespanol.com">
+            Español
+           </a>
+          </li>
+          <li>
+           <a href="https://anfdeutsch.com">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a href="https://anfsorani.com">
+            کوردی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfrussian.com">
+            Pу́сский
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="dropdown language-dropdown">
+         <a class="needsclick" data-toggle="dropdown" href="#">
+          <span class="change-text">
+           English
+          </span>
+          <i class="fa fa-angle-down">
+          </i>
+         </a>
+         <ul class="dropdown-menu language-change">
+          <li>
+           <a href="https://anfturkce.net">
+            Türkçe
+           </a>
+          </li>
+          <li>
+           <a href="https://anfenglish.com">
+            English
+           </a>
+          </li>
+          <li>
+           <a href="https://anfkurdi.com">
+            Kurdî
+           </a>
+          </li>
+          <li>
+           <a href="https://anfarabic.com">
+            العربية
+           </a>
+          </li>
+          <li>
+           <a href="https://anfpersian.com">
+            فارسی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfespanol.com">
+            Español
+           </a>
+          </li>
+          <li>
+           <a href="https://anfdeutsch.com">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a href="https://anfsorani.com">
+            کوردی
+           </a>
+          </li>
+          <li>
+           <a href="https://anfrussian.com">
+            Pу́сский
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div id="date-time">
+         Thursday, 19 Jul 2018
+        </div>
+       </div>
+       <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">
+         Toggle navigation
+        </span>
+        <span class="icon-bar">
+        </span>
+        <span class="icon-bar">
+        </span>
+        <span class="icon-bar">
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="container" id="menubar">
+     <nav class="navbar-left collapse navbar-collapse" id="mainmenu">
+      <ul class="nav navbar-nav">
+       <li>
+        <a href="/kurdistan">
+         Kurdistan
+        </a>
+       </li>
+       <li>
+        <a href="/news">
+         News
+        </a>
+       </li>
+       <li>
+        <a href="/rojava">
+         Rojava
+        </a>
+       </li>
+       <li>
+        <a href="/features">
+         Features
+        </a>
+       </li>
+       <li>
+        <a href="/women">
+         Women
+        </a>
+       </li>
+       <li>
+        <a href="/freedom-of-the-press">
+         Freedom of the Press
+        </a>
+       </li>
+       <li>
+        <a href="/human-rights">
+         Human Rights
+        </a>
+       </li>
+       <li>
+        <a href="/culture">
+         Culture
+        </a>
+       </li>
+      </ul>
+     </nav>
+     <div class="search-button">
+      <ul>
+       <li class="search-icon">
+        <i class="fa fa-search">
+        </i>
+       </li>
+      </ul>
+      <div class="search">
+       <form action="/articles/search" lpformnum="1" method="GET" role="form">
+        <input autocomplete="off" class="search-form" name="q" placeholder="Type &amp; Press Enter" type="text"/>
+       </form>
+      </div>
+      <!--/.search-->
+     </div>
+     <!-- search-button -->
+    </div>
+   </div>
+  </header>
+  <section class="container wrapper">
+   <section class="content">
+    <section class="article">
+     <div class="row">
+      <div class="col-sm-8">
+       <article class="post">
+        <div class="post-content">
+         <h2 class="entry-title">
+          Turkish state cuts off waters of Euphrates again
+         </h2>
+         <p class="entry-lead">
+          The Turkish state has once again cut off the waters of the Euphrates River, reducing the water levels in Syria. The people say Erdoğan wants to make the people of Syria dependent on him by preventing the water from reaching the country.
+         </p>
+        </div>
+        <div class="post-header">
+         <div class="entry-thumbnail">
+          <img alt="" class="img-responsive" src="https://anfenglish.com/uploads/en/articles/2018/07/20180707-120207-menbic-artesa-turik-a-dagerkir-avi-leser-gelen-mennbci-qot-kir593f43-image.jpg"/>
+         </div>
+        </div>
+        <div class="post-content">
+         <div class="entry-meta">
+          <ul class="list-inline">
+           <li class="writer">
+            <i class="fa fa-user">
+            </i>
+            ANF
+           </li>
+           <li class="map-marker">
+            <i class="fa fa-map-marker">
+            </i>
+            MANBIJ
+           </li>
+           <li class="publish-date">
+            <i class="fa fa-clock-o">
+            </i>
+            Saturday,  7 Jul 2018, 15:15
+           </li>
+          </ul>
+         </div>
+         <aside id="share">
+         </aside>
+         <div class="entry-content">
+          <p>
+           The Turkish government has once again restricted the flow of the Euphrates River into Syria. The Turkish state has been using the river as a weapon against the Syrian peoples who have been living under war conditions for years.
+          </p>
+          <p>
+           The Turkish President and AKP Leader Tayyip Erdoğan says he has a good relationship with the people of Syria on one hand, but at the same time attacks the people with inhumane and immoral ways. Like in Afrin and Bab, he wants to add various other areas to the invaded zones.
+          </p>
+          <p>
+           The Turkish state has taken it upon itself to aid gang groups in Syria, and doesn’t refrain from meddling in Syria’s domestic affairs or invading its lands. With the imposed embargo, another one of the Turkish state’s inhumane methods is to force the people to migrate. The “water issue” between Syria and the Turkish state goes back a long time, but with the crisis in Syria, it has become more urgent once again. The Turkish government has taken full control of the Euphrates River which is the lifeline for thousands of acres of cropland in Syria and Iraq.
+          </p>
+          <p>
+           The Turkish state is not complying with the treaty signed with Syria regarding the Euphrates River. The treaty states that Syria is entitled to 500 cubic meters of water per second, but the Turkish state allows only less than half of the agreed upon amount to flow to Syria. The people stress that the water levels are at a record low in the river.
+          </p>
+          <p>
+           But like with war, it is the civilians and the agricultural population that suffers the most by the water cuts. Naturally, they are the ones to harbor the most anger against the Turkish state.
+          </p>
+          <p>
+           Hemîd Ebdî (80) from the Karakozak village along the Euphrates River said he hasn’t seen the likes of the Turkish state tyranny anywhere else.
+          </p>
+          <p>
+           Hemîd voiced his fury like follows: “Fascist Erdoğan and the Turkish state ruined our crops and our property. We have been farmers for decades. We watered our fields with the waters of the Euphrates a hundred years ago. Cutting off this water caused the animals here to die and the fields to dry up.”
+          </p>
+          <p>
+           Hemîd stressed that Erdoğan is forcing a policy of “starving” the Syrian peoples.
+          </p>
+          <p>
+           Another farmer, Abduldayîs, who also irrigates his field with the waters of the Euphrates called on all humanitarian organizations and asked them to take action against the violence the Turkish state imposes upon the Syrian peoples.
+          </p>
+          <p>
+           Cutting off the Euphrates River negatively affects electricity production and works in Northern Syrian dams as well as agriculture. The dams were able to provide 12 hours of electricity per day, but now it has fallen to 8 hours.
+          </p>
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="col-sm-4 sidebar">
+       <div class="compact">
+        <h2 class="section-title title">
+         Most read
+        </h2>
+        <ul class="post-list">
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180717-yja-star-35007226c-image752b72-image410dc2-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180717-yja-star-35007226c-image752b72-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/hpg-hit-turkish-forces-in-barzan-28314">
+              HPG hit Turkish forces in Barzan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-20180717-mlkp-fesk7a177b-image89f4e5-imageeac22e-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180717-20180717-mlkp-fesk7a177b-image89f4e5-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/mlkp-guerrillas-join-the-defense-of-southern-kurdistan-28303">
+              MLKP guerrillas join the defense of Southern Kurdistan
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180717-efrin-ceteler881f20-image0a580f-imagecd1dbd-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180717-efrin-ceteler881f20-image0a580f-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/arabization-islamization-and-kurdish-ban-in-occupied-afrin-28318">
+              Arabization, Islamization and Kurdish ban in occupied Afrin
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180718-aaaaa153cc1-imageb96c54-imageee342c-thumb.png" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-aaaaa153cc1-imageb96c54-image.png 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/5-killed-as-gangs-involved-in-afrin-s-invasion-were-hit-in-idlib-28321">
+              5 killed as gangs involved in Afrin’s invasion were hit in Idlib
+              <span class="title-icons">
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180714-yja-star12344de2bc-imagea92746-image8881a8-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180714-yja-star12344de2bc-imagea92746-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/hpg-reports-guerrilla-actions-in-mardin-amed-and-bitlis-28337">
+              HPG reports guerrilla actions in Mardin, Amed and Bitlis
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-20180718-iqbal-moradif18b07-imagec06eab-image5b3bed-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-iqbal-moradif18b07-imagec06eab-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/kurdish-human-rights-activist-tortured-and-executed-28340">
+              Kurdish human rights activist tortured and executed
+              <span class="title-icons">
+               <i class="fa fa-picture-o">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-20180715-690x390cc-mrk-15-07-2018-meryem-fereci4612b3-image0904db-image14fe61-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180715-20180715-690x390cc-mrk-15-07-2018-meryem-fereci4612b3-image0904db-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/kurdish-student-disappeared-in-iran-tortured-to-death-28260">
+              Kurdish student ‘disappeared’ in Iran tortured to death
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180718-20180718-1-rojava-701x412b196de-imageadf068-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180718-1-rojava-701x412b196de-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/kck-rojava-revolution-will-be-the-foundation-of-democratic-syria-28343">
+              KCK: Rojava Revolution will be the foundation of Democratic Syria
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="compact">
+        <h2 class="section-title title">
+         More in Rojava
+        </h2>
+        <ul class="post-list">
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180719-20180719-30571382022-5d40e9923a-kcf351d-imageed9a0f-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180719-30571382022-5d40e9923a-kcf351d-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/dkp-bOeg-salutes-the-rojava-revolution-28353">
+              DKP/BÖG salutes the Rojava Revolution
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180719-20180719-k18135f5-imageac5fe9-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180719-k18135f5-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/kobane-remembers-martyrs-of-the-revolution-28351">
+              Kobanê remembers martyrs of the revolution
+              <span class="title-icons">
+               <i class="fa fa-picture-o">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180719-20180719-ypj-rojava-efrin28be32-image198aff-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180719-ypj-rojava-efrin28be32-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/ypg-rojava-revolution-is-a-trailblazer-for-syrian-revolution-28350">
+              YPG: Rojava revolution is a trailblazer for Syrian revolution
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180719-20180719-359974image178c51e-imagef2ec13-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180719-359974image178c51e-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/pyd-rojava-revolution-is-the-renaissance-of-the-middle-east-28349">
+              PYD: Rojava Revolution is the renaissance of the Middle East
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180719-20180719-shehba-march-19-joke98d01-imageaa57ba-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180719-shehba-march-19-joke98d01-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/march-to-commend-19-july-revolution-in-shehba-28348">
+              March to commend 19 July Revolution in Shehba
+              <span class="title-icons">
+               <i class="fa fa-video-camera">
+               </i>
+              </span>
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+         <li>
+          <div class="post medium-post simulated-link">
+           <div class="entry-header">
+            <div class="entry-thumbnail">
+             <img alt="" class="img-responsive" sizes="(min-width: 768px) 30vw, 100vw" src="https://anfenglish.com/uploads/en/articles/2018/07/20180719-20180719-football-19-july-ok64a161-image0e7839-thumb.jpg" srcset="https://anfenglish.com/uploads/en/articles/2018/07/20180719-football-19-july-ok64a161-image.jpg 350w"/>
+            </div>
+           </div>
+           <div class="post-content">
+            <h2 class="entry-title">
+             <a href="https://anfenglish.com/rojava/football-to-commemorate-the-19-july-rojava-revolution-28346">
+              Football to commemorate the 19 July Rojava Revolution
+             </a>
+            </h2>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+   </section>
+  </section>
+  <footer>
+   <div class="footer-wrapper">
+    <div class="container">
+     <p>
+      <a href="/">
+       Home
+      </a>
+      |
+      <a href="/contact">
+       Impressum &amp; Contact
+      </a>
+      |
+      <a href="/feed.rss">
+       RSS Feed
+      </a>
+      |
+      <span>
+       Copyright © Ajansa Nûçeyan a Firatê 2018. All Rights Reserved
+      </span>
+     </p>
+    </div>
+   </div>
+  </footer>
+  <!-- /.container -->
+  <script src="/build/js/vendors.min.js?20180123v1">
+  </script>
+  <script src="/js/app.js?20180123v1">
+  </script>
+  <script>
+   $().ready(function(){
+
+	jsSocials.setDefaults("facebook", {
+	    label: "Share",
+	});
+	
+	jsSocials.setDefaults("twitter", {
+	    text: "Turkish state cuts off waters of Euphrates again",
+	});
+	
+	$("#share").jsSocials({
+		shareIn: "popup",
+	    shares: ["facebook", "twitter", "email", "whatsapp", "telegram"]
+	});
+
+	$.get('/articles/hit/' + 28053);
+
+});
+  </script>
+  <script type="text/javascript">
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"554a87dbfd","applicationID":"45386782","transactionName":"YQFRZBMFW0dRAUNeWFhLZkIIS1xaVAdPGUdeFA==","queueTime":0,"applicationTime":58,"atts":"TUZSElsfSEk=","errorBeacon":"bam.nr-data.net","agent":""}
+  </script>
+ </body>
+</html>

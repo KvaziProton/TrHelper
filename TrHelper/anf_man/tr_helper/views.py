@@ -4,10 +4,11 @@ from rest_framework.renderers import JSONRenderer
 # from rest_framework.parsers import JSONParser
 from rest_framework import status
 from .models import Article
-# from .serializers import ArticleAddSer
+from .serializers import ArticleAddSer
 from rest_framework.renderers import TemplateHTMLRenderer
-from .tasks import articles_queue, check_if_new
 import datetime
+from .tasks import check_user_add
+
 
 class ArticleFlow(APIView):
 
@@ -26,7 +27,7 @@ class ArticleFlow(APIView):
             return Response(content)
 
 #draft for handle buttom click
-        if 'ajax-send' in request.data:
+        if 'action' in request.data:
             translator = request.data['user_id']
             pk = request.data['article_id']
             a = Article.objects.get(pk=pk)
@@ -36,9 +37,24 @@ class ArticleFlow(APIView):
 
 #draft for main flow
         else:
-            #check_if_new.delay()
             queryset = Article.objects.order_by('-published')[:20]
-            return Response({'articles': queryset, 'date_today': datetime.date.today()})
+            return Response({
+                'articles': queryset,
+                'date_today': datetime.date.today()
+                })
+
+    def post(self, request, format=None):
+        # serializer = ArticleAddSer(data=request.data)
+        # if serializer.is_valid():
+        url = request.data['url']
+        bool, status, data = check_user_add.delay()
+        return Response({
+                'added' : bool,
+                'status' : message,
+                'data' : data
+                })  # -- добавить обработку для разных сценариев (нашел-не нашел похожие)
+                 # -- использовать класс для автозаполнения в сериалайзере или без него?
+
 
     #     #if we wanna manually add article
     # def post(self, request, format=None):

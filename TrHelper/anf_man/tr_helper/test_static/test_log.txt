@@ -1,0 +1,3 @@
+test_static/ar_1.html https://anfenglish.com/features/turkish-state-brbarism-in-afrin-knows-bounds-28101
+test_static/ar_3.html https://anfenglish.com/freedom-of-the-press/action-to-demand-freedom-for-jailed-journalists-in-turkey-28054
+test_static/ar_4(kurd).html https://anfkurdi.com/rojava-sUriye/Soresa-me-berhema-keda-ji-40-sali-ye-99981

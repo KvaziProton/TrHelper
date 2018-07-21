@@ -1,7 +1,12 @@
 [
   "test_parser.py::test_newarticle_cls[newarticle_data0]",
   "test_parser.py::test_newarticle_cls[newarticle_data1]",
-  "test_parser.py::test_ifnew_func[ifnew_data0]",
-  "test_parser.py::test_ifnew_func[ifnew_data1]",
-  "test_parser.py::test_ifnew_func[ifnew_data2]"
+  "test_parser.py::test_newarticle_cls[newarticle_data2]",
+  "test_parser.py::test_flowlistener_cls[ifnew_data0]",
+  "test_parser.py::test_flowlistener_cls[ifnew_data1]",
+  "test_parser.py::test_flowlistener_cls[ifnew_data2]",
+  "test_parser.py::test_manager_cls[manage_data_eng0]",
+  "test_parser.py::test_manager_cls[manage_data_eng1]",
+  "test_parser.py::test_manager_cls[manage_data_eng2]",
+  "test_parser.py::test_manager_cls[manage_data_eng3]"
 ]
