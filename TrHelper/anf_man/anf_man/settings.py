@@ -107,8 +107,7 @@ LOGIN_REDIRECT_URL = 'main'
 LOGOUT_REDIRECT_URL = 'main'
 
 
-CELERY_BROKER_URL = 'amqp://localhost'
-CELERY_IGNORE_RESULT = True
+
 
 # CELERY_QUEUES = (
 #     Queue('high', Exchange('high'), routing_key='high'),
@@ -124,3 +123,12 @@ CELERY_IGNORE_RESULT = True
 #     # -- LOW PRIORITY QUEUE -- #
 #     'myapp.tasks.close_session': {'queue': 'low'},
 # }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_IGNORE_RESULT = True
+CELERY_RESULT_BACKEND = 'cache+memcached://127.0.0.1:11211/'

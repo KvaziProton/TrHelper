@@ -46,15 +46,21 @@ class ArticleFlow(APIView):
     def post(self, request, format=None):
         # serializer = ArticleAddSer(data=request.data)
         # if serializer.is_valid():
-        url = request.data['url']
-        bool, status, data = check_user_add.delay()
-        return Response({
-                'added' : bool,
-                'status' : message,
-                'data' : data
-                })  # -- добавить обработку для разных сценариев (нашел-не нашел похожие)
-                 # -- использовать класс для автозаполнения в сериалайзере или без него?
+        print(request.data)
+        print('user-add' in request.data)
+        if 'user-add' in request.data:
+            print('I am in post')
+            url = request.data['input-url']
+            print(url)
+            query_similar = check_user_add(url)
+            print('I am after delay')
+            print(query_similar)
 
+            return Response({
+                    'similar' : query_similar
+                    })  # -- добавить обработку для разных сценариев (нашел-не нашел похожие)
+                     # -- использовать класс для автозаполнения в сериалайзере или без него?
+        return Response(status=status.HTTP_201_CREATED)
 
     #     #if we wanna manually add article
     # def post(self, request, format=None):

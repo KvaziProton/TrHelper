@@ -1,10 +1,21 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+
 <form action="" method="post">
-  <input type="text" name="Введите url:" id="input-url"/>
+  <input type="text" name="input-url"/>
   <input type="submit" name="user-add" value="Добавить" id="btm-add"/>
 </form>
+<div>
+  {% if similar %}
+  Нашли похожую, это она?
+  {{input.title}}
+  {{similar.title}}
+  <input type="submit" name="user-sure" value="все равно добавить" id="btm-add"/>
+  {% else %}
+  Добавлено!
+  {% endif %}
+</div>
 <div>
   {{ status }}
   {{ data }}
@@ -23,18 +34,19 @@
     <td>
     </td>
   </tr>
+  {% if date_today != article.published.date %}
+    <tr>
+      <td class="date-title">
+        {{ article.published.date }}
+      </td>
+      <td>
+      </td>
+      <td>
+      </td>
+    </tr>
+  {% endif %}
   {% for article in articles %}
-    {% if date_today != article.published.date %}
-      <tr>
-        <td class="date-title">
-          {{ date_today }}
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-      </tr>
-    {% endif %}
+
     <tr>
       <td>
         {{ article.published.time }}

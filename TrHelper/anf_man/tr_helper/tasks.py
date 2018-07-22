@@ -14,4 +14,10 @@ def clear_log():
 
 @shared_task
 def check_user_add(url):
-    return Manager.manual_check(url)
+    print('intasks')
+    print(url)
+    manager = Manager(url=url)
+    print(manager.title)
+    res = manager.get_status(user_req=True)
+    print(res)
+    return res

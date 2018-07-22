@@ -1,11 +1,20 @@
-from bs4 import BeautifulSoup
-import requests
-from .c.app_config import config_url
-from Levenshtein import distance, jaro_winkler
-from .func import mse
 import datetime
+import requests
+from collections import namedtuple
+from django.core.cache import cache
+from bs4 import BeautifulSoup
+from Levenshtein import distance, jaro_winkler
+from .c.app_config import config_url
 from .models import LANGUAGE_CHOICES, Article, ArticleCase, Logger, TestLog
+import numpy as np
+import PIL
+from PIL import Image
+from io import BytesIO
 
+def mse(x, y):
+    return np.linalg.norm(x - y)/100
+
+CacheArticle = namedtuple('CacheArticle', ['img_array', 'url_title', 'language'])
 
 
 class NewArticle():
@@ -18,7 +27,6 @@ class NewArticle():
                                 'lxml')
         NewArticle.compare_parse(self) if compare else NewArticle.parse(self)
 
-
     def parse(self):
         text = self.soup.select('div.entry-content')[0].get_text().strip()
         self.title = self.soup.select('h2.entry-title')[0].get_text().strip()
@@ -26,11 +34,19 @@ class NewArticle():
         self.symbols_amount = sum(map(len, [text, self.title, self.lead]))
         NewArticle.compare_parse(self)
 
-
     def compare_parse(self):
         print('parse article')
         self.url_title = self.url.split('/')[-1]
+
         self.img_url = self.soup.article.select('img.img-responsive')[0].get('src')
+        response = requests.get(self.img_url)
+        x = Image.open(
+            BytesIO(response.content)
+            ).resize(
+            (32, 32), PIL.Image.ANTIALIAS
+            ).convert('LA')
+        self.img_array = np.array(x)
+
         for num, i in LANGUAGE_CHOICES:
             if 'anf'+i in self.url:
                 self.language = i
@@ -39,26 +55,13 @@ class NewArticle():
         return self.url_title
 
 
-        # rubr = self.soup.select('h2.section-title title')[1].get_text().split()[2:]
-        #
-        # items = self.title + '\n' + self.lead
-        # spesial = '\xe2'+'\x80'+ '\x9c' +'\x99' --- если выделять из url, то уже нормализованы
-        # for i in string.punctuation+special:
-        #     items.replace(i, ' ')
-        # items = items.split()
-        #
-        # other = [i
-        #     for i in items
-        #     if i.isnumeric() or i[0].isupper()]
-        #
-
-
 class Manager(NewArticle):
 
     def __init__(self,
             log='tr_helper/last_article_log.txt',
             url=None, soup=None):
         print(url)
+        print('in init')
         NewArticle.__init__(self, url, soup)
         self.log = log
         self.logger = Logger()
@@ -76,9 +79,19 @@ class Manager(NewArticle):
             #         comp_article = NewArticle(url=url, soup=soup, compare=True)
             for url in log.readlines()[::-1][1:]:
                 print('hrrr', url)
-                comp_article = NewArticle(url, compare=True)
+                comp_article = cache.get(url)
+                print(comp_article)
+                if not comp_article:
+                    print('set cache')
+                    comp_article = NewArticle(url, compare=True)
+                    array = comp_article.img_array
+                    title = comp_article.url_title
+                    lang = comp_article.language
+                    val = CacheArticle(array, title, lang)
+                    cache.set(url, val, 86400)
+
                 print('got article')
-                img_index = mse(self.img_url, comp_article.img_url)
+                img_index = mse(self.img_array, comp_article.img_array)
                 text_index = jaro_winkler(
                     self.url_title,
                     comp_article.url_title,
@@ -98,15 +111,15 @@ class Manager(NewArticle):
                     )
                  #test case for comp_article with each already added article
                 print('hrrrr')
-                if not img_index:
+                if img_index < 15:
                     print('hrrrrr')
                     if comp_article.language != self.language:
-                        testlog.decision = '3'
                         query = Article.objects.get(url=url.strip())
+                        print('query -- ', query)
                         if user_req:
                             testlog.decision = '2'
                             testlog.save()
-                            return self.query
+                            return query
 
                         testlog.decision = '3'
                         testlog.save()
@@ -159,16 +172,12 @@ class Manager(NewArticle):
 
 
 
-    def manage(self):
+    def manage(self, user_req=False):
         print('in manager')
-        if Manager.get_status(self) == 'new':
+        if Manager.get_status(self, user_req=user_req) == 'new':
             print('in manager - new')
-
             Manager.write_bd(self)
-
-            return
         Manager.update(self)
-        return
 
 
 class FlowListener():
