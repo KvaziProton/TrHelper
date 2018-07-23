@@ -1,0 +1,101 @@
+Compare case: https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+https://anfenglishmobile.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+
+https://anfenglishmobile.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+mse=24.056724631586903, text0.5573005698005697
+
+Compare case: https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+mse=24.056724631586903, text0.5601851851851852
+
+
+Compare case: https://anfenglishmobile.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglishmobile.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+write fersion to bd
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+write fersion to bd
+
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+write fersion to bd
+
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+write fersion to bd
+
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+write fersion to bd
+
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+found fersion
+
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+found fersion
+
+Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=13.728787273463013, text0.5601851851851852
+
+found fersion
+
+Compare case: https://anfkurdi.com/rojane/temelli-qatilen-malbata-Senyasar-li-ku-ne-100154
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180723-20180723-690x390cc-agr-23-07-2018-temelli-agrida20cc903-imagece9f51-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=32.72071973536035, text0.6226851851851852
+
+https://anfenglish.com/kurdistan/hdp-s-buldan-the-will-of-the-people-of-hakkari-is-in-jail-28460
+https://anfenglish.com/uploads/en/articles/2018/07/20180723-20180723-hkr-23-07-2018-hdp-genel-baskani-hakkaride3b14f7f-image5d865a-image.JPG
+mse=50.04516659978264, text0.5634093915343915
+
+write to bd
+
+Compare case: https://anfkurdi.com/rojane/temelli-qatilen-malbata-Senyasar-li-ku-ne-100154
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180723-20180723-690x390cc-agr-23-07-2018-temelli-agrida20cc903-imagece9f51-image.jpg
+https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
+mse=32.72071973536035, text0.6226851851851852
+
+https://anfenglish.com/kurdistan/hdp-s-buldan-the-will-of-the-people-of-hakkari-is-in-jail-28460
+https://anfenglish.com/uploads/en/articles/2018/07/20180723-20180723-hkr-23-07-2018-hdp-genel-baskani-hakkaride3b14f7f-image5d865a-image.JPG
+mse=50.04516659978264, text0.5634093915343915
+
+write to bd
+

@@ -3,27 +3,21 @@
 {% block content %}
 
 <form action="" method="post">
+  {% csrf_token %}
   <input type="text" name="input-url"/>
   <input type="submit" name="user-add" value="Добавить" id="btm-add"/>
 </form>
 <div>
   {% if similar %}
   Нашли похожую, это она?
-  {{input.title}}
+  {{url.title}}
   {{similar.title}}
   <input type="submit" name="user-sure" value="все равно добавить" id="btm-add"/>
   {% else %}
-  Добавлено!
+    {{ message }}
+    {{url.title}}
   {% endif %}
 </div>
-<div>
-  {{ status }}
-  {{ data }}
-  {% if not added %}
-    <input type="submit" name="sure" value="Все равно добавить?" id="btm-sure" article_url="{{ data.url }}" />
-  {% endif %}
-</div>
-
 <table>
   <tr>
     <td class="date-title">

@@ -50,15 +50,32 @@ class ArticleFlow(APIView):
         print('user-add' in request.data)
         if 'user-add' in request.data:
             print('I am in post')
-            url = request.data['input-url']
-            print(url)
-            query_similar = check_user_add(url)
-            print('I am after delay')
-            print(query_similar)
+            url = request.data['input-url'].strip()
+            # try:
+            #     #get from bd
+            # except:
 
-            return Response({
-                    'similar' : query_similar
-                    })  # -- добавить обработку для разных сценариев (нашел-не нашел похожие)
+            similar_url = check_user_add.delay(url).get()
+            if similar_url:
+                query = Article.objects.get(url=similar_url)
+                return Response({
+                        'url' : url,
+                        'similar' : query
+                        })
+            else:
+                query = Article.objects.get(url=url)
+                message = 'За последние 24 часа такой нет. Успешно добавлено!'
+                return Response({
+                        'message' : message,
+                        'url' : query
+                })
+
+        if 'sure' in request.data:
+            similar_url
+            url
+            #write_bd
+
+              # -- добавить обработку для разных сценариев (нашел-не нашел похожие)
                      # -- использовать класс для автозаполнения в сериалайзере или без него?
         return Response(status=status.HTTP_201_CREATED)
 

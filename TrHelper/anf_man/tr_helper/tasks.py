@@ -17,7 +17,11 @@ def check_user_add(url):
     print('intasks')
     print(url)
     manager = Manager(url=url)
-    print(manager.title)
-    res = manager.get_status(user_req=True)
-    print(res)
-    return res
+    manager.is_new(user_req=True)
+    try:
+        similar_url = manager.similar_url
+        print(similar_url)
+    except AttributeError:
+        similar_url = None
+        manager.write_bd()
+    return similar_url

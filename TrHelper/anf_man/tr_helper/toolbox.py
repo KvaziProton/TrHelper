@@ -21,6 +21,7 @@ class NewArticle():
     '''Parse all data to Article model by url and for comparison of articles'''
 
     def __init__(self, url=None, soup=None, compare=False):
+        print('init comp_article: ', url)
         self.url = url
         self.soup = soup or BeautifulSoup(
                                 requests.get(url).text,
@@ -37,8 +38,10 @@ class NewArticle():
     def compare_parse(self):
         print('parse article')
         self.url_title = self.url.split('/')[-1]
-
-        self.img_url = self.soup.article.select('img.img-responsive')[0].get('src')
+        try:
+            self.img_url = self.soup.article.select('img.img-responsive')[0].get('src')
+        except AtributeError:
+            print(article is deleted)
         response = requests.get(self.img_url)
         x = Image.open(
             BytesIO(response.content)
@@ -59,104 +62,71 @@ class Manager(NewArticle):
 
     def __init__(self,
             log='tr_helper/last_article_log.txt',
+            other_log = 'tr_helper/other_language_log.txt',
+            decisions = 'tr_helper/decisions.txt',
             url=None, soup=None):
-        print(url)
-        print('in init')
         NewArticle.__init__(self, url, soup)
         self.log = log
-        self.logger = Logger()
-        self.logger.save()
+        self.other_log = other_log
+        self.decisions = decisions
 
-    def get_status(self, user_req=False, test=False):
-        print('get status')
-        print('hr')#new article to investigate
-        with open(self.log) as log:
-            print('hrr')
-            # if test:
-            #     for i in log.readlines():
-            #         i, url = i.split(' ')
-            #         soup = BeautifulSoup(open(i.strip()), 'lxml')
-            #         comp_article = NewArticle(url=url, soup=soup, compare=True)
-            for url in log.readlines()[::-1][1:]:
-                print('hrrr', url)
-                comp_article = cache.get(url)
-                print(comp_article)
+    def is_new(self, user_req=False, test=False):
+        with open(self.log) as log, open(self.other_log) as other_log, open(self.decisions, 'a') as decisions:
+            decisions.write('Compare case: '+self.url+'\n'+self.img_url+'\n')
+            for url in other_log.readlines()+log.readlines()[::-1]:
+
+                comp_article = cache.get(url.strip())
                 if not comp_article:
                     print('set cache')
-                    comp_article = NewArticle(url, compare=True)
+                    comp_article = NewArticle(url=url.strip(), compare=True)
                     array = comp_article.img_array
                     title = comp_article.url_title
                     lang = comp_article.language
                     val = CacheArticle(array, title, lang)
                     cache.set(url, val, 86400)
 
-                print('got article')
                 img_index = mse(self.img_array, comp_article.img_array)
                 text_index = jaro_winkler(
                     self.url_title,
                     comp_article.url_title,
                     0.25
-                    ) #urls is nornalized!!!
-                text_2 = distance(
-                    self.url_title,
-                    comp_article.url_title,
                     )
-                print('mse=', img_index, 'text=', text_index)
-                testlog = TestLog(
-                    article=comp_article.url_title,
-                    img_index=img_index,
-                    text_index=text_index,
-                    text_2=text_2,
-                    comp_article = self.logger
-                    )
-                 #test case for comp_article with each already added article
-                print('hrrrr')
+                line = url+ comp_article.img_url+'\n'+ \
+                'mse='+str(img_index)+', '+'text'+str(text_index)+'\n'+'\n'
+                decisions.write(line)
+
                 if img_index < 15:
-                    print('hrrrrr')
                     if comp_article.language != self.language:
-                        query = Article.objects.get(url=url.strip())
-                        print('query -- ', query)
-                        if user_req:
-                            testlog.decision = '2'
-                            testlog.save()
-                            return query
-
-                        testlog.decision = '3'
-                        testlog.save()
-                        self.case = query.case
-
-                        return 'found version'
+                        decisions.write('found fersion'+'\n'+'\n')
+                        self.similar_url = comp_article.url
+                        return False
 
                     if text_index == 1:
-                        self.update_url = url.strip()
-                        testlog.decision = '1'
-                        testlog.save()
-                        return 'update'
+                        self.update_url = comp_article.url
+                        decisions.write('update'+'\n'+'\n')
+                        return False
 
-            testlog.decision = '0'
-            testlog.save()
-            self.case = ArticleCase()
-            self.case.save()
+            decisions.write('write to bd'+'\n'+'\n')
+            if user_req:
+                with open(self.other_log, 'a') as other_log:
+                    other_log.write(url+'\n')
+
+
             print('new')
-            return 'new'
-
+            return True
 
     def update(self):
-        try:
-            query = Article.objects.get(url=self.update_url)
-            query.url = self.url
-            query.title = self.title
-            query.symbols_amount = self.symbols_amount
-            query.save()
-            self.logger.article = query
-            self.logger.save()
-        except:
-            pass
-
+        print('in update')
+        query = Article.objects.get(url=self.update_url)
+        query.url = self.url
+        query.title = self.title
+        query.symbols_amount = self.symbols_amount
+        query.save()
 
     def write_bd(self):
         print('write_bd')
-
+        self.case = ArticleCase()
+        self.case.save()
         new = Article(
             case = self.case,
             url=self.url,
@@ -166,22 +136,22 @@ class Manager(NewArticle):
             img_url=self.img_url
             )
         new.save()
-        print('written')
-        self.logger.article = new
-        self.logger.save()
 
 
 
-    def manage(self, user_req=False):
+    def manage(self):
         print('in manager')
-        if Manager.get_status(self, user_req=user_req) == 'new':
+        if Manager.is_new(self):
+
             print('in manager - new')
             Manager.write_bd(self)
-        Manager.update(self)
+            return
+        else:
+            Manager.update(self)
+            return
 
 
 class FlowListener():
-
 
     def __init__(self,
                 url=config_url,
@@ -213,10 +183,10 @@ class FlowListener():
                 print('pum3')
                 url = urls[:num][-1]
                 print(url)
-
+                Manager(url=url).manage()
                 with open(self.log, 'a') as log:
                     log.write(url+'\n')
-                Manager(url=url).manage()
+
                 print('pum5')
         except ValueError:
             pass
