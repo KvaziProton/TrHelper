@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block article_add %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="text" name="input-url"/>
+  <input type="submit" name="user-add" value="Добавить" id="btm-add"/>
+</form>
+<div>
+  {% if similar %}
+  Нашли похожую, это она?
+  {{url.title}}
+  {{similar.title}}
+  <input type="submit" name="user-sure" value="все равно добавить" id="btm-add"/>
+  {% else %}
+    {{ message }}
+    {{url.title}}
+  {% endif %}
+</div>
+{% endblock %}

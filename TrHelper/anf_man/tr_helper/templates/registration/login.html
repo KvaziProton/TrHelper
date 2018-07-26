@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h2>Sign in</h2>
+  {% if next %}
+  <form action="/login/?next={{next}}" method="post">
+  {% else %}
+  <form action="/login/" method="post">
+    {% endif %}
+    {% csrf_token %}
+    <fieldset>
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+    <fieldset>
+  </form>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Article, ArticleCase, Logger, TestLog
+from .models import Article, ArticleCase, Translator, User
 
 admin.site.register(Article)
 admin.site.register(ArticleCase)
-admin.site.register(Logger)
-admin.site.register(TestLog)
+admin.site.register(Translator)
+admin.site.register(User)

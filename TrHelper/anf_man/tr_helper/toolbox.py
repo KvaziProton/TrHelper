@@ -5,11 +5,11 @@ from django.core.cache import cache
 from bs4 import BeautifulSoup
 from Levenshtein import distance, jaro_winkler
 from .c.app_config import config_url
-from .models import LANGUAGE_CHOICES, Article, ArticleCase, Logger, TestLog
-import numpy as np
+from .models import LANGUAGE_CHOICES, Article, ArticleCase
 import PIL
 from PIL import Image
 from io import BytesIO
+import numpy as np
 
 def mse(x, y):
     return np.linalg.norm(x - y)/100
@@ -29,11 +29,11 @@ class NewArticle():
         NewArticle.compare_parse(self) if compare else NewArticle.parse(self)
 
     def parse(self):
-        text = self.soup.select('div.entry-content')[0].get_text().strip()
+        self.text = self.soup.select('div.entry-content')[0].get_text().strip()
         self.title = self.soup.select('h2.entry-title')[0].get_text().strip()
         self.lead = self.soup.select('p.entry-lead')[0].get_text().strip()
-        self.symbols_amount = sum(map(len, [text, self.title, self.lead]))
-        NewArticle.compare_parse(self)
+        self.symbols_amount = sum(map(len, [self.text, self.title, self.lead]))
+        # NewArticle.compare_parse(self)
 
     def compare_parse(self):
         print('parse article')
@@ -41,7 +41,7 @@ class NewArticle():
         try:
             self.img_url = self.soup.article.select('img.img-responsive')[0].get('src')
         except AtributeError:
-            print(article is deleted)
+            print('article is deleted')
         response = requests.get(self.img_url)
         x = Image.open(
             BytesIO(response.content)
@@ -95,7 +95,7 @@ class Manager(NewArticle):
                 'mse='+str(img_index)+', '+'text'+str(text_index)+'\n'+'\n'
                 decisions.write(line)
 
-                if img_index < 15:
+                if img_index < 25: #denends from order
                     if comp_article.language != self.language:
                         decisions.write('found fersion'+'\n'+'\n')
                         self.similar_url = comp_article.url
@@ -107,13 +107,12 @@ class Manager(NewArticle):
                         return False
 
             decisions.write('write to bd'+'\n'+'\n')
-            if user_req:
-                with open(self.other_log, 'a') as other_log:
-                    other_log.write(url+'\n')
+        if user_req:
+            with open(self.other_log, 'a') as other_log:
+                other_log.write(url+'\n')
 
-
-            print('new')
-            return True
+        print('new')
+        return True
 
     def update(self):
         print('in update')

@@ -1,101 +1,300 @@
-Compare case: https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-https://anfenglishmobile.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
+Compare case: https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=49.34810330701677, text0.5912475134981529
 
-https://anfenglishmobile.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-mse=24.056724631586903, text0.5573005698005697
-
-Compare case: https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-mse=24.056724631586903, text0.5601851851851852
-
-
-Compare case: https://anfenglishmobile.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglishmobile.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-write fersion to bd
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-write fersion to bd
-
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-write fersion to bd
-
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-write fersion to bd
-
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-write fersion to bd
-
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-found fersion
-
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-found fersion
-
-Compare case: https://anfenglish.com/kurdistan/turkish-aerial-attacks-against-southern-kurdistan-continue-28406
-https://anfenglish.com/uploads/en/articles/2018/07/20180721-20180618-20180507-anf-yayin-oelcuesue2aea18-image402249-image8a4007-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=13.728787273463013, text0.5601851851851852
-
-found fersion
-
-Compare case: https://anfkurdi.com/rojane/temelli-qatilen-malbata-Senyasar-li-ku-ne-100154
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180723-20180723-690x390cc-agr-23-07-2018-temelli-agrida20cc903-imagece9f51-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=32.72071973536035, text0.6226851851851852
-
-https://anfenglish.com/kurdistan/hdp-s-buldan-the-will-of-the-people-of-hakkari-is-in-jail-28460
-https://anfenglish.com/uploads/en/articles/2018/07/20180723-20180723-hkr-23-07-2018-hdp-genel-baskani-hakkaride3b14f7f-image5d865a-image.JPG
-mse=50.04516659978264, text0.5634093915343915
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=54.89407709398164, text0.5909706437104029
 
 write to bd
 
-Compare case: https://anfkurdi.com/rojane/temelli-qatilen-malbata-Senyasar-li-ku-ne-100154
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180723-20180723-690x390cc-agr-23-07-2018-temelli-agrida20cc903-imagece9f51-image.jpg
-https://anfkurdi.com/kurdistan/balafiren-ser-bombe-li-geliye-balinde-ye-amediye-barandin-100086
-https://anfkurdi.com/uploads/ku/articles/2018/07/20180721-20180721-anf-yayin-oelcuesueb1983d-image5f69b2-image.jpg
-mse=32.72071973536035, text0.6226851851851852
+Compare case: https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=42.190023702292464, text0.6186764044349183
 
-https://anfenglish.com/kurdistan/hdp-s-buldan-the-will-of-the-people-of-hakkari-is-in-jail-28460
-https://anfenglish.com/uploads/en/articles/2018/07/20180723-20180723-hkr-23-07-2018-hdp-genel-baskani-hakkaride3b14f7f-image5d865a-image.JPG
-mse=50.04516659978264, text0.5634093915343915
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=44.56981041018685, text0.6235865583691671
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=44.12905278838421, text0.664120649465477
+
+write to bd
+
+Compare case: https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=41.13607419285414, text0.5721076309311603
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=55.98670109945754, text0.6876221001221001
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=42.115979152810866, text0.6411605705083966
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=51.466554188132704, text0.7669813902572523
+
+write to bd
+
+Compare case: https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=48.75776656082598, text0.523476263039098
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=51.74119248722433, text0.6570245734749304
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=49.48525740056325, text0.6225768013081446
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=50.695010602622425, text0.6251592280145168
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=53.45368462510325, text0.5814079648356539
+
+write to bd
+
+Compare case: https://anfenglish.com/rojava/clash-between-bubena-tribe-and-ahrar-al-sham-gangs-in-afrin-28536
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-144155-efrin-cetesma-nebere-cete-wa-bobeniya0463fd-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=40.88822691191194, text0.5730517848164907
+
+https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+mse=41.17340768020058, text0.5735170302334481
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=55.386298847278105, text0.6540496540496541
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=52.801124988015175, text0.6172771672771673
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=43.367324104675866, text0.582536771316575
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=55.59168912706287, text0.6856862167206995
+
+write to bd
+
+Compare case: https://anfenglish.com/culture/new-caves-discovered-in-hasankeyf-28538
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-hasankeyf-yeni-magaralar-bulundu2dffa3d-image4ccf10-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=45.950202393460685, text0.7885369532428356
+
+https://anfenglish.com/rojava/clash-between-bubena-tribe-and-ahrar-al-sham-gangs-in-afrin-28536
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-144155-efrin-cetesma-nebere-cete-wa-bobeniya0463fd-image.jpg
+mse=45.95766530188408, text0.5018162393162393
+
+https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+mse=50.91026517314558, text0.5626284531757169
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=50.9692956592496, text0.5192836792836792
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=42.48756759335606, text0.4884429580081754
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=51.5962556781013, text0.6239522688798051
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=49.18986582620449, text0.6099322133804892
+
+write to bd
+
+Compare case: https://anfenglish.com/women/120-women-and-7-children-killed-in-six-months-in-turkey-28539
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-690x390cc-ada-26-07-2018-kadin-aciklama3edea36-imagedde505-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=39.625375707998025, text0.6172006143076538
+
+https://anfenglish.com/culture/new-caves-discovered-in-hasankeyf-28538
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-hasankeyf-yeni-magaralar-bulundu2dffa3d-image4ccf10-image.jpg
+mse=38.68469852538598, text0.5168313016673672
+
+https://anfenglish.com/rojava/clash-between-bubena-tribe-and-ahrar-al-sham-gangs-in-afrin-28536
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-144155-efrin-cetesma-nebere-cete-wa-bobeniya0463fd-image.jpg
+mse=43.345196965753885, text0.6433055105186253
+
+https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+mse=45.092535967718646, text0.6109506446177748
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=47.73730407134446, text0.6320318433473172
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=48.6574773287724, text0.6393372565503713
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=41.43092444056734, text0.6612945803965048
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=48.443094451118625, text0.614637569049815
+
+write to bd
+
+Compare case: https://anfenglish.com/rojava/rojava-hosts-international-conference-on-healthcare-practice-28540
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-122928-dsc072375eb518-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=54.46388803601888, text0.5704099821746881
+
+https://anfenglish.com/women/120-women-and-7-children-killed-in-six-months-in-turkey-28539
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-690x390cc-ada-26-07-2018-kadin-aciklama3edea36-imagedde505-image.jpg
+mse=45.74873222287149, text0.5729839377380361
+
+https://anfenglish.com/culture/new-caves-discovered-in-hasankeyf-28538
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-hasankeyf-yeni-magaralar-bulundu2dffa3d-image4ccf10-image.jpg
+mse=50.92062057752242, text0.5332711732711732
+
+https://anfenglish.com/rojava/clash-between-bubena-tribe-and-ahrar-al-sham-gangs-in-afrin-28536
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-144155-efrin-cetesma-nebere-cete-wa-bobeniya0463fd-image.jpg
+mse=52.28899693052067, text0.6566264653221175
+
+https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+mse=53.15384181787804, text0.5858475545406743
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=50.508568579994424, text0.6739942484623336
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=47.780433233699334, text0.6469308469308469
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=55.476840212831156, text0.552011872851453
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=51.56263666648555, text0.6360402050057222
+
+write to bd
+
+Compare case: https://anfenglish.com/rojava/tev-dem-condemns-isis-attack-in-suwayda-28541
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-121211-115647-whatsapp-image-2018-07-26-at-12-47-51-pm7ad253-image.jpeg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=43.4115399404352, text0.6016339869281045
+
+https://anfenglish.com/rojava/rojava-hosts-international-conference-on-healthcare-practice-28540
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-122928-dsc072375eb518-image.jpg
+mse=39.74080900032107, text0.585120017378082
+
+https://anfenglish.com/women/120-women-and-7-children-killed-in-six-months-in-turkey-28539
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-690x390cc-ada-26-07-2018-kadin-aciklama3edea36-imagedde505-image.jpg
+mse=51.17002638263928, text0.5994004250151791
+
+https://anfenglish.com/culture/new-caves-discovered-in-hasankeyf-28538
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-hasankeyf-yeni-magaralar-bulundu2dffa3d-image4ccf10-image.jpg
+mse=46.96697669639808, text0.6730769230769231
+
+https://anfenglish.com/rojava/clash-between-bubena-tribe-and-ahrar-al-sham-gangs-in-afrin-28536
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-144155-efrin-cetesma-nebere-cete-wa-bobeniya0463fd-image.jpg
+mse=53.27148299043307, text0.5594017094017094
+
+https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+mse=43.92649314479816, text0.6072805905114949
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=57.85153411967569, text0.6423280423280423
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=51.92141273116516, text0.5929050638728058
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=46.58693486375767, text0.68940513403429
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=55.01134973803133, text0.6292784163473819
+
+write to bd
+
+Compare case: https://anfenglish.com/rojava/afrin-kongreya-star-conference-underway-28542
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-170846-sehba-nerinen-gel-1ed380b-image.jpg
+https://anfkurdi.com/rojane/nekarin-teslim-bigirin-dest-bi-tecride-kirin-100243
+https://anfkurdi.com/uploads/ku/articles/2018/07/20180726-20180725-8888970b7b-image97147c-image.jpg
+mse=47.7997960246694, text0.5749377528789293
+
+https://anfenglish.com/rojava/tev-dem-condemns-isis-attack-in-suwayda-28541
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-121211-115647-whatsapp-image-2018-07-26-at-12-47-51-pm7ad253-image.jpeg
+mse=49.24327466771478, text0.6444444444444445
+
+https://anfenglish.com/rojava/rojava-hosts-international-conference-on-healthcare-practice-28540
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-122928-dsc072375eb518-image.jpg
+mse=44.4957188951926, text0.6265031265031265
+
+https://anfenglish.com/women/120-women-and-7-children-killed-in-six-months-in-turkey-28539
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-690x390cc-ada-26-07-2018-kadin-aciklama3edea36-imagedde505-image.jpg
+mse=48.85798911130093, text0.5744341854573624
+
+https://anfenglish.com/culture/new-caves-discovered-in-hasankeyf-28538
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-hasankeyf-yeni-magaralar-bulundu2dffa3d-image4ccf10-image.jpg
+mse=43.27690146024782, text0.6371998371998372
+
+https://anfenglish.com/rojava/clash-between-bubena-tribe-and-ahrar-al-sham-gangs-in-afrin-28536
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-144155-efrin-cetesma-nebere-cete-wa-bobeniya0463fd-image.jpg
+mse=52.30225807744824, text0.5938479344729345
+
+https://anfenglish.com/news/stop-turkish-occupation-of-kurdistan-day-of-action-on-28-july-28535
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-1030527088866fa0-image025dcc-image.jpg
+mse=47.31239478191735, text0.5720305283617754
+
+https://anfenglish.com/human-rights/isolation-of-Oecalan-must-end-for-peace-to-be-established-28533
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180726-img-147923d6bd-image6e9e6a-image.JPG
+mse=52.252137755311026, text0.5938492063492063
+
+https://anfenglish.com/kurdistan/footage-of-turkish-military-vehicle-destroyed-by-guerrillas-28534
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-20180716-20180714-20180712-20180702-20180702-gerilla-copie9b7936-image013a6e-image259fd6-image90fdfc-image1fabcc-image204266-image.jpg
+mse=54.074180530082934, text0.6292226292226292
+
+https://anfenglish.com/news/almost-250-dead-in-isis-attacks-in-syria-28532
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-syri-afb20fb-image.jpg
+mse=49.28226861661301, text0.6797584541062802
+
+https://anfenglish.com/news/iraq-greenlights-basra-s-demand-for-a-federal-region-28531
+https://anfenglish.com/uploads/en/articles/2018/07/20180726-basraffa8be-image.jpg
+mse=52.8222349016018, text0.6136534163473819
 
 write to bd
 
