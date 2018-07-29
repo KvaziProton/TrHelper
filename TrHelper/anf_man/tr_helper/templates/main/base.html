@@ -7,12 +7,23 @@
       <meta name="description" content="">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
     </head>
     <body>
-      {% block article_add %}
-      {% endblock %}
+      <div class="head">
+        <div class="logo">
+      <h3>  Anf-Translator </h3>
+        </div>
+        <div class="info">
+        </div>
+        <div class="account">
+                <h4>{{user.username}} </div>
+                <a href="/logout/">Выйти</a></h4>
+          </div>
       {% block content %}
       {% endblock %}
+
+    <div class="footer">
+    </div>
     </body>
   </html>
