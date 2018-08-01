@@ -42,6 +42,8 @@ class UserList(ListView):
 
 
 class ArticleFlow(LoginRequiredMixin, View):
+    '''Retrive articles from bd and handle buttoms clicks'''
+
     template_name = 'main/article_flow.html'
 
     def get(self, request):

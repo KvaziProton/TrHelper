@@ -14,8 +14,8 @@ def clear_log():
 
 @shared_task
 def check_user_add(url):
-    print('intasks')
-    print(url)
+    '''Directly pass url to Manager class'''
+
     manager = Manager(url=url)
     manager.is_new(user_req=True)
     try:

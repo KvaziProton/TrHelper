@@ -32,7 +32,6 @@ class NewArticle():
         NewArticle.compare_parse(self) if compare else NewArticle.parse(self)
 
     def parse(self):
-        print('parse article')
         self.text = self.soup.select('div.entry-content')[0].get_text().strip()
         self.title = self.soup.select('h2.entry-title')[0].get_text().strip()
         self.lead = self.soup.select('p.entry-lead')[0].get_text().strip()
@@ -40,7 +39,6 @@ class NewArticle():
         NewArticle.compare_parse(self)
 
     def compare_parse(self):
-        print('compare parse')
         self.url_title = self.url.split('/')[-1]
         try:
             self.img_url = self.soup.article.select('img.img-responsive')[0].get('src')
@@ -63,6 +61,7 @@ class NewArticle():
 
 
 class Manager(NewArticle):
+    '''Check url and manage answer in order to url status'''
 
     def __init__(self,
             log='tr_helper/last_article_log.txt',
@@ -81,7 +80,6 @@ class Manager(NewArticle):
 
                 comp_article = cache.get(url.strip())
                 if not comp_article:
-                    print('set cache')
                     comp_article = NewArticle(url=url.strip(), compare=True)
                     array = comp_article.img_array
                     title = comp_article.url_title
@@ -115,11 +113,9 @@ class Manager(NewArticle):
             with open(self.other_log, 'a') as other_log:
                 other_log.write(url+'\n')
 
-        print('new')
         return True
 
     def update(self):
-        print('in update')
         query = Article.objects.get(url=self.update_url)
         query.url = self.url
         query.title = self.title
@@ -127,7 +123,6 @@ class Manager(NewArticle):
         query.save()
 
     def write_bd(self):
-        print('write_bd')
         self.case = ArticleCase()
         self.case.save()
         new = Article(
@@ -140,13 +135,8 @@ class Manager(NewArticle):
             )
         new.save()
 
-
-
     def manage(self):
-        print('in manager')
         if Manager.is_new(self):
-
-            print('in manager - new')
             Manager.write_bd(self)
             return
         else:
@@ -155,6 +145,8 @@ class Manager(NewArticle):
 
 
 class FlowListener():
+    '''Parse soup and in case of new url ask Manager class
+    to check if it is new one'''
 
     def __init__(self,
                 url=config_url,
@@ -165,8 +157,6 @@ class FlowListener():
         self.last = open('tr_helper/last_article_log.txt').readlines()[-1].strip()
         # self.soup = soup or BeautifulSoup(requests.get(url).text, 'lxml')
 
-
-
     def start(self):
         self.soup = BeautifulSoup(requests.get(self.url).text, 'lxml')
         links = self.soup.table.find_all('a')
@@ -176,21 +166,14 @@ class FlowListener():
             urls.append(link.get('href').strip())
 
         try:
-            print(self.last, urls[:5])
-            print(self.last in urls[:5])
-            print('pum0')
             num = urls.index(self.last)
-            print('pum1')
             if num:
-
-                print('pum3')
                 url = urls[:num][-1]
                 print(url)
                 Manager(url=url).manage()
                 with open(self.log, 'a') as log:
                     log.write(url+'\n')
 
-                print('pum5')
         except ValueError:
             pass
 
