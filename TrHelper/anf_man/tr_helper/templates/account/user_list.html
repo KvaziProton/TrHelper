@@ -1,0 +1,9 @@
+{% for profile in profile_list %}
+<form action="/main/add_cloud_account/" method="get">
+  {% csrf_token %}
+  {{user}}
+
+</form>
+
+
+{%endfor%}

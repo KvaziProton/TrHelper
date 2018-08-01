@@ -1,0 +1,16 @@
+{% block content %}
+  <h2>Зарегистрировать о</h2>
+  {% if message %}
+  {{message}}
+  {% endif %}
+<form action="/main/add/" method="post">
+  {% csrf_token %}
+  <p>
+    {{form}}
+  </p>
+
+
+  <input type="submit" name="user_create" value="create"/>
+</form>
+  </form>
+{% endblock %}

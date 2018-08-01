@@ -1,0 +1,16 @@
+{% block content %}
+  <h2>Зарегистрировать переводчика</h2>
+  {% if message %}
+  {{message}}
+  {% endif %}
+<form action="/main/user_list/" method="post">
+  {% csrf_token %}
+  <p>
+    {{form}}
+  </p>
+
+
+  <input type="submit" name="user_create" value="create"/>
+</form>
+  </form>
+{% endblock %}

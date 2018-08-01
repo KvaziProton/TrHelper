@@ -1,15 +1,18 @@
 import datetime
 import requests
 from collections import namedtuple
+from io import BytesIO
+
 from django.core.cache import cache
+
 from bs4 import BeautifulSoup
 from Levenshtein import distance, jaro_winkler
-from .c.app_config import config_url
-from .models import LANGUAGE_CHOICES, Article, ArticleCase
 import PIL
 from PIL import Image
-from io import BytesIO
 import numpy as np
+
+from .c.app_config import config_url
+from .models import LANGUAGE_CHOICES, Article, ArticleCase
 
 def mse(x, y):
     return np.linalg.norm(x - y)/100
@@ -29,14 +32,15 @@ class NewArticle():
         NewArticle.compare_parse(self) if compare else NewArticle.parse(self)
 
     def parse(self):
+        print('parse article')
         self.text = self.soup.select('div.entry-content')[0].get_text().strip()
         self.title = self.soup.select('h2.entry-title')[0].get_text().strip()
         self.lead = self.soup.select('p.entry-lead')[0].get_text().strip()
         self.symbols_amount = sum(map(len, [self.text, self.title, self.lead]))
-        # NewArticle.compare_parse(self)
+        NewArticle.compare_parse(self)
 
     def compare_parse(self):
-        print('parse article')
+        print('compare parse')
         self.url_title = self.url.split('/')[-1]
         try:
             self.img_url = self.soup.article.select('img.img-responsive')[0].get('src')
@@ -170,7 +174,7 @@ class FlowListener():
         # test_tracker = []
         for link in links:
             urls.append(link.get('href').strip())
-        #
+
         try:
             print(self.last, urls[:5])
             print(self.last in urls[:5])
@@ -189,3 +193,13 @@ class FlowListener():
                 print('pum5')
         except ValueError:
             pass
+
+# def create_user():
+#     user = User.objects.create_user(username, email, password)
+#     user.is_translator = True
+#     user.save()
+#
+#     cloud_account = User.objects.create_user(username, passowrd)
+#     cloud_account.save()
+#     account = CloudAccount(user=user, account=cloud_account, folder_name='some_name')
+#     account.save()
