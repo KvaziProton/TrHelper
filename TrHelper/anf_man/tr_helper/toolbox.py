@@ -186,3 +186,111 @@ class FlowListener():
 #     cloud_account.save()
 #     account = CloudAccount(user=user, account=cloud_account, folder_name='some_name')
 #     account.save()
+
+import os
+import re
+import errno
+import json
+from requests_toolbelt.multipart.encoder import MultipartEncoder, MultipartEncoderMonitor
+
+from tqdm import tqdm
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+
+
+class PyMailCloudError(Exception):
+    pass
+
+    class AuthError(Exception):
+        def __init__(self, message="Login or password is incorrect"):
+            super(PyMailCloudError.AuthError, self).__init__(message)
+
+    class NetworkError(Exception):
+        def __init__(self, message="Connection failed"):
+            super(PyMailCloudError.NetworkError, self).__init__(message)
+
+    class NotFoundError(Exception):
+        def __init__(self, message="File not found"):
+            super(PyMailCloudError.NotFoundError, self).__init__(message)
+
+    class PublicLinksExceededError(Exception):
+        def __init__(self, message="Public links number exceeded"):
+            super(PyMailCloudError.PublicLinksExceededError, self).__init__(message)
+
+    class UnknownError(Exception):
+        def __init__(self, message="WTF is going on?"):
+            super(PyMailCloudError.UnknownError, self).__init__(message)
+
+    class NotImplementedError(Exception):
+        def __init__(self, message="The developer wants to sleep"):
+            super(PyMailCloudError.NotImplementedError, self).__init__(message)
+    class FileSizeError(Exception):
+        def __init__(self, message="The file is bigger than 2 GB"):
+            super(PyMailCloudError.FileSizeError, self).__init__(message)
+
+__version__ =  "0.2"
+
+class PyMailCloud:
+    def __init__(self, login, password):
+
+        self.user_agent = "PyMailCloud/({})".format(__version__) #should be changed
+        self.session = requests.Session()
+        self.session.headers.update({'User-Agent': self.user_agent})
+        self.login = login
+        self.password = password
+        self.downloadSource = None
+        self.uploadTarget = None
+        self.__recreate_token()
+
+    def __recreate_token(self):
+        loginResponse = self.session.post("https://auth.mail.ru/cgi-bin/auth",
+                                          data={
+                                              "page": "http://cloud.mail.ru/",
+                                              "Login": self.login,
+                                              "Password": self.password
+                                          },verify=False
+                                          )
+        # success?
+        if loginResponse.status_code == requests.codes.ok and loginResponse.history:
+            getTokenResponse = self.session.post("https://cloud.mail.ru/api/v2/tokens/csrf")
+            if getTokenResponse.status_code is not 200:
+                raise PyMailCloudError.UnknownError
+            self.token = json.loads(getTokenResponse.content.decode("utf-8"))['body']['token']
+            print('Login successful')
+            self.__get_download_source()
+        else:
+            raise PyMailCloudError.NetworkError()
+
+
+    def upload_callback(self, monitor, progress):
+        progress.total = monitor.len
+        progress.update(8192)
+        pass
+
+    def upload_files(self, file, file_name, folder_name):
+        progress = tqdm(unit='B')
+        progress.desc = file_name
+
+        destination = '/' + folder_name + '/' + file_name
+        # if os.path.getsize(file['filename']) > 1024 * 1024 * 1024 * 2:
+        #     raise PyMailCloudError.FileSizeError
+        monitor = MultipartEncoderMonitor.from_fields(
+            fields={'file': ('filename', file, 'application/octet-stream')},
+            callback=lambda monitor: self.upload_callback(monitor, progress))
+        upload_response = self.session.post(self.uploadTarget, data=monitor,
+                          headers={'Content-Type': monitor.content_type},verify=False)
+        if upload_response.status_code is not 200:
+            raise PyMailCloudError.NetworkError
+
+        hash, filesize = upload_response.content.decode("utf-8").split(';')[0], upload_response.content.decode("utf-8").split(';')[1][:-2]
+        response = self.session.post("https://cloud.mail.ru/api/v2/file/add",  # "http://httpbin.org/post",
+                                     data={
+                                         "token": self.token,
+                                         "home": destination,
+                                         "conflict": 'rename',
+                                         "hash": hash,
+                                         "size": filesize,
+                                     })
+        return json.dumps(response.json(), sort_keys=True, indent=3, ensure_ascii=False)

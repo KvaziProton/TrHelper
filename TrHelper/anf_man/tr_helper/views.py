@@ -8,13 +8,14 @@ from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 
-from .models import Article, User, CloudAccount
+from .models import Article, User, CloudAccount, TranslationStatistic
 from .tasks import check_user_add
-from .toolbox import NewArticle
+from .toolbox import NewArticle, PyMailCloud
 from .forms import UserAddForm, CloudAccountAddForm
 
 from docx import Document
 from io import BytesIO
+import chardet
 
 
 
@@ -85,6 +86,7 @@ class ArticleFlow(LoginRequiredMixin, View):
                 {'message' : message})
 
         if 'take' in querydict:
+            print(user)
             article = Article.objects.get(pk=querydict['article-pk'])
 
             article.translator = User.objects.get(username=user)
@@ -118,15 +120,34 @@ class ArticleFlow(LoginRequiredMixin, View):
             return response
 
         if 'load' in querydict:
-            article = Article.objects.get(pk=querydict['article-pk'])
-            article.loaded = True
-            article.save()
-            # statistic = TranslationStatistic(
-            #     user=User.objects.get(user=user),
-            #     article=article,
-            #     symbols_ammount
-            # )
-            print('loaded')
+            print(self.request.FILES['file'])
+            f = self.request.FILES['file']
+            file_name = f.name
+            file = f.file
+            print(file, file_name)
+            user = User.objects.get(username=user)
+            cloud_account = CloudAccount.objects.get(user=user)
+            folder_name = cloud_account.folder_name
+            cloud_user = PyMailCloud(cloud_account.email, cloud_account.password)
+            res = cloud_user.upload_files(file, file_name, folder_name)
+
+            if '200' in res:
+
+                article = Article.objects.get(pk=querydict['article-pk'])
+                article.loaded = True
+                article.save()
+                ## some manipulations to count symbols
+                symbols_ammount = 0
+                # with open('dytes.txt', 'wb+') as destination:
+                #     for chunk in f.chunks():
+                #         symbols_ammount += len(chunk.decode(d['encoding']))
+                # print('symbols: ', symbols_ammount)
+                statistic = TranslationStatistic(
+                    translator=user,
+                    article=article,
+                    symbols_ammount = symbols_ammount,
+                )
+
             queryset = Article.objects.order_by('-published')[:20]
             return render(request, self.template_name,
                 {
