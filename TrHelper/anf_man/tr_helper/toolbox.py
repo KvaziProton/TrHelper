@@ -2,6 +2,8 @@ import datetime
 import requests
 from collections import namedtuple
 from io import BytesIO
+import os
+import re
 
 from django.core.cache import cache
 
@@ -10,6 +12,12 @@ from Levenshtein import distance, jaro_winkler
 import PIL
 from PIL import Image
 import numpy as np
+from docx import Document
+import errno
+import json
+from requests_toolbelt.multipart.encoder import MultipartEncoder, MultipartEncoderMonitor
+from tqdm import tqdm
+import urllib3
 
 from .c.app_config import config_url
 from .models import LANGUAGE_CHOICES, Article, ArticleCase
@@ -187,18 +195,8 @@ class FlowListener():
 #     account = CloudAccount(user=user, account=cloud_account, folder_name='some_name')
 #     account.save()
 
-import os
-import re
-import errno
-import json
-from requests_toolbelt.multipart.encoder import MultipartEncoder, MultipartEncoderMonitor
 
-from tqdm import tqdm
-import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-
-
 
 class PyMailCloudError(Exception):
     pass
@@ -244,6 +242,18 @@ class PyMailCloud:
         self.uploadTarget = None
         self.__recreate_token()
 
+    def __get_download_source(self):
+        dispatcher = self.session.get('https://cloud.mail.ru/api/v2/dispatcher',
+                                      params={
+                                          "token": self.token
+                                      }, )
+        if dispatcher.status_code is not 200:
+            raise PyMailCloudError.NetworkError
+        print(json.loads(dispatcher.content.decode("utf-8")))
+        self.downloadSource = json.loads(dispatcher.content.decode("utf-8"))['body']['get'][0]['url']
+        self.uploadTarget = json.loads(dispatcher.content.decode("utf-8"))['body']['upload'][0]['url']
+        print('Acquired CDN Node')
+
     def __recreate_token(self):
         loginResponse = self.session.post("https://auth.mail.ru/cgi-bin/auth",
                                           data={
@@ -284,6 +294,7 @@ class PyMailCloud:
         if upload_response.status_code is not 200:
             raise PyMailCloudError.NetworkError
 
+        print(monitor)
         hash, filesize = upload_response.content.decode("utf-8").split(';')[0], upload_response.content.decode("utf-8").split(';')[1][:-2]
         response = self.session.post("https://cloud.mail.ru/api/v2/file/add",  # "http://httpbin.org/post",
                                      data={
@@ -294,3 +305,28 @@ class PyMailCloud:
                                          "size": filesize,
                                      })
         return json.dumps(response.json(), sort_keys=True, indent=3, ensure_ascii=False)
+
+
+def encode_docx(binary_text):
+    docx = Document(BytesIO(binary_text))
+    text = [paragraph.text for paragraph in docx.paragraphs]
+    return text
+
+def encode_txt(binary_text):
+    text = binary_text.decode().split('/n')
+    return text
+
+def count_ammount_in_loaded(loaded_file):
+    suffix = loaded_file.name.split('.')[-1]
+    encode_by_suffix = {
+        # 'doc' : encode_doc_txt,
+        'txt' : encode_txt,
+        'docx': encode_docx,
+    }
+    try:
+        text = encode_by_suffix[suffix](loaded_file.read())
+    except KeyError:
+        return 'Unsupported format of uploaded file: can not count symbols_ammount'
+    pure_text = [line for line in text if '://anf' not in line]
+    ammount = sum(map(len, text))
+    return ammount

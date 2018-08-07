@@ -8,14 +8,13 @@ from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 
-from .models import Article, User, CloudAccount, TranslationStatistic
-from .tasks import check_user_add
-from .toolbox import NewArticle, PyMailCloud
-from .forms import UserAddForm, CloudAccountAddForm
-
 from docx import Document
 from io import BytesIO
-import chardet
+
+from .models import Article, User, CloudAccount, TranslationStatistic
+from .tasks import check_user_add
+from .toolbox import NewArticle, PyMailCloud, count_ammount_in_loaded
+from .forms import UserAddForm, CloudAccountAddForm
 
 
 
@@ -120,11 +119,10 @@ class ArticleFlow(LoginRequiredMixin, View):
             return response
 
         if 'load' in querydict:
-            print(self.request.FILES['file'])
             f = self.request.FILES['file']
             file_name = f.name
             file = f.file
-            print(file, file_name)
+            symbols_ammount = count_ammount_in_loaded(loaded_file=f)
             user = User.objects.get(username=user)
             cloud_account = CloudAccount.objects.get(user=user)
             folder_name = cloud_account.folder_name
@@ -132,16 +130,10 @@ class ArticleFlow(LoginRequiredMixin, View):
             res = cloud_user.upload_files(file, file_name, folder_name)
 
             if '200' in res:
-
                 article = Article.objects.get(pk=querydict['article-pk'])
                 article.loaded = True
                 article.save()
-                ## some manipulations to count symbols
-                symbols_ammount = 0
-                # with open('dytes.txt', 'wb+') as destination:
-                #     for chunk in f.chunks():
-                #         symbols_ammount += len(chunk.decode(d['encoding']))
-                # print('symbols: ', symbols_ammount)
+
                 statistic = TranslationStatistic(
                     translator=user,
                     article=article,
