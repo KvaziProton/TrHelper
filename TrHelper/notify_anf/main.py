@@ -4,20 +4,6 @@ import pyperclip
 from notify_anf import ANFNotify
 
 
-# def check_articles(a=ANFNotify()):
-#
-#     f_check, *rest = a.get_info()
-#     b = ANFNotify()
-#
-#
-#     while f_check == sec_sheck:
-#         b = ANFNotify()
-#         sec_sheck, link, symbol_number = b.get_info()
-#
-#     b.notify()
-#     a = b
-#     check_articles(a)
-
 
 
 

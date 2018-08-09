@@ -5,11 +5,11 @@
 <div class="btms">
 <form action="/dict" method="post" >
   {% csrf_token %}
-  <input type="submit" name="dict" value="Exception Dict" />
-</form>
+  <input type="submit" name="dict" value="Exception Dict" class="dict btm"/>
+<!-- </form>
 <form action="/add_term/" method="post">
-  {% csrf_token %}
-  <input type="submit" name="except" value="Add exception" />
+  {% csrf_token %} -->
+  <input type="submit" name="except" value="Add exception" class="add btm" />
 </form>
 </div>
 <div class="dict">

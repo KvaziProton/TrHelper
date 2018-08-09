@@ -21,9 +21,10 @@ body {
   padding: 20px 20px 20px 40px;
   font-family: monospace;
 }
-/* .dict-btm {
-    margin-left: 30px
-} */
+.btm {
+    display: inline-block;
+    padding-top: 10px;
+}
 .page-header {
     background-color: #E6E6E6;
     margin-top: 0;
