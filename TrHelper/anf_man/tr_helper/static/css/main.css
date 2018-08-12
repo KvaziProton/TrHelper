@@ -68,3 +68,7 @@ td {
   width: 70%
   background-color: ffffff;
 }
+
+#file {
+  display: none;
+}

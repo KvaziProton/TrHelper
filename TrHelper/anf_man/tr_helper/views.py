@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth import logout
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 
@@ -41,17 +41,49 @@ class UserList(ListView):
     template_name = 'account/user_list.html'
 
 
+def action(request):
+    print('in take')
+    pk = request.GET.get('article_pk', None)
+    user = request.user
+    article = Article.objects.get(pk=pk)
+    article.translator = User.objects.get(username=user)
+    article.save()
+    tr = article.translator.username
+    print(tr)
+    data = {'translator': tr}
+    return JsonResponse(data)
+
+
 class ArticleFlow(LoginRequiredMixin, View):
     '''Retrive articles from bd and handle buttoms clicks'''
 
     template_name = 'main/article_flow.html'
 
     def get(self, request):
+        querydict = self.request.GET
+        user = self.request.user
+        print(querydict)
+
+        if 'take' in querydict:
+            print('in take')
+            article = Article.objects.get(pk=querydict['article-pk'])
+
+            article.translator = User.objects.get(username=user)
+            article.save()
+            queryset = Article.objects.order_by('-published')[:20]
+            return render(request, self.template_name,
+                {
+                'translator': user,
+                'articles': queryset,
+                'date_today': datetime.date.today()
+                })
+
         queryset = Article.objects.order_by('-published')[:20]
         return render(request, self.template_name,
             {'articles': queryset,
             'date_today': datetime.date.today()
             })
+
 
     def post(self, request):
         querydict = self.request.POST
@@ -93,6 +125,7 @@ class ArticleFlow(LoginRequiredMixin, View):
             queryset = Article.objects.order_by('-published')[:20]
             return render(request, self.template_name,
                 {
+                'translator': user,
                 'articles': queryset,
                 'date_today': datetime.date.today()
                 })
