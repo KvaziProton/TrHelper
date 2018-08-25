@@ -1,0 +1,23 @@
+<td>
+  {{ article.published.time }}
+</td>
+<td>
+  <a href="{{ article.url }}">{{ article.title }}</a>
+</td>
+<td class="symbols">
+  {{ article.symbols_amount }} symbols
+</td>
+<td class="button" pk={{article.pk}}>
+  <form action="/main/file/" method="post">
+  {% csrf_token %}
+    <button type="submit" class="parse" name="download" value={{article.pk}} article_pk={{article.pk}}>Скачать текст</button>
+  </form>
+  <form action="/main/file/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name=article-pk value={{article.pk}} />
+    <label for="file">Выбрать файл:</label> <input type="file" id="file" name='file'/>
+    <button type="submit" name="load" value="">
+      <span class="glyphicon glyphicon-cloud-upload"></span>Загрузить</button>
+  </form>
+  </div>
+</td>

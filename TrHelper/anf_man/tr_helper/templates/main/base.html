@@ -1,10 +1,10 @@
 {% load staticfiles %}
-<DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head>
       <title></title>
-      <meta charset="utf-8">
-      <meta name="description" content="">
+      <meta charset="utf-8"></meta>
+      <meta name="description" content=""></meta>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -17,16 +17,23 @@
         <div class="info">
         </div>
         <div class="account">
-                <h4>{{user.username}} </div>
-                <a href="/logout/">Выйти</a></h4>
+                <h4>{{user.username}} </h4>
+                <h4><a href="/logout/">Выйти</a></h4>
           </div>
       {% block content %}
       {% endblock %}
 
     <div class="footer">
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
+
+      <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+      <script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+      <script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+      <script src="{% static 'js/file_upload.js' %}"></script>
     {% block javascript %}{% endblock %}
     </body>
   </html>

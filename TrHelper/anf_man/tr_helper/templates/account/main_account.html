@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="translator_account">
+  {{ user.login }}
+  {{ user.password }}
+  {{ user.email }}
+</div>
+{% if user.is_translator %}
+  <div class="cloud_account">
+    {{cloud_account.email}}
+    {{cloud_account.password}}
+    {{cloud_account.folder}}
+  </div>
+  <div class="statistic">
+
+  </div>
+{% endif%}
+{% if user.is_editor %}
+  <div class="add_user">
+    Добавить пользователя
+  </div>
+{% endif %}
+{% endcontent %}

@@ -19,6 +19,11 @@ class CloudAccountAddForm(forms.ModelForm):
     }
 
 
-class UploadFileForm(forms.Form):
-    title = forms.CharField(max_length=50)
-    file = forms.FileField()
+class EmbedArticleForm(forms.Form):
+    url = forms.URLField()
+
+    def clean_url(self):
+        data = self.cleaned_data['url']
+        if 'anf' not in data:
+            raise forms.ValidationError("You should paste url from anfnews!")
+        return data

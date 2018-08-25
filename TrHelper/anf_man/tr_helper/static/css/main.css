@@ -1,5 +1,3 @@
-
-
 body {
   background-color: #ebe8e8;
   font-family: "Arial" sans-serif
@@ -7,7 +5,7 @@ body {
 }
 
 .head {
-  background-color: #ffffff;
+  /background-color: #ffffff;
   font-family: "FF Kava" sans-serif
   front-size: 5em;
   text-align: center;
@@ -18,7 +16,6 @@ input[name="input-url"] {
 }
 .article-menu {
   background-color: #61D8A2;
-
   list-style: none;
 }
 ul {
@@ -36,17 +33,20 @@ ul {
   display: block;
   padding: 5px 5px;
 }
+.article-container {
+  width: 60%;
+  margin: 20px 10px;
+  background-color: #ffffff;
+}
+
+table {
+  width:100%;
+}
 
 .article-row {
   width:100%;
   padding: 10px 10px;
   border-bottom: 8px solid #ebe8e8;
-  background-color: ffffff;
-}
-
-.article-container {
-  width: 60%;
-  margin: 20px 10px;
 }
 
 td {
@@ -55,9 +55,7 @@ td {
 
 
 .article-row .buttom {
-  width:30px;
-  text-align: right;
-
+  text-align: left;
 }
 
 .article-row .symbols {
@@ -69,6 +67,11 @@ td {
   background-color: ffffff;
 }
 
-#file {
-  display: none;
+.case-container {
+  border: 2px solid black;
+
 }
+
+/* #file {
+  display: none;
+} */

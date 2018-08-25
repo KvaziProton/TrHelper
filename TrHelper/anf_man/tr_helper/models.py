@@ -46,6 +46,11 @@ class ArticleCase(models.Model):
     published = models.DateTimeField(auto_now_add=True)
 
 
+    class Meta:
+        ordering = ('published',)
+        get_latest_by = 'published'
+
+
 class Article(models.Model):
     case = models.ForeignKey(
         ArticleCase,
@@ -60,9 +65,11 @@ class Article(models.Model):
     tags = models.CharField(max_length=100)
     symbols_amount = models.IntegerField()
     published = models.DateTimeField(auto_now_add=True)
-        #автоматически ставит дату-время (datetime.datetime)
+    last_change = models.DateTimeField(auto_now=True)
+        #auto_now - автоматически ставит дату-время (datetime.datetime)
         #при каждом сохранении inst.save()
         #даные берет из настроек timezone
+
     language = models.CharField(
         max_length=2,
         choices=LANGUAGE_CHOICES,
@@ -76,6 +83,7 @@ class Article(models.Model):
 
     class Meta:
         ordering = ('published',)
+        get_latest_by = 'last_change'
 
 
 class TranslationStatistic(models.Model):
@@ -88,7 +96,7 @@ class TranslationStatistic(models.Model):
         Article,
         on_delete=models.CASCADE,
         )
-    translated = models.DateTimeField(auto_now=True)
+    translated = models.DateTimeField(auto_now_add=True)
     #ставит дату при создании
     symbols_ammount = models.IntegerField()
 

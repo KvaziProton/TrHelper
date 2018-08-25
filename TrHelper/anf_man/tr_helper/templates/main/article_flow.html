@@ -1,37 +1,82 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<div class="article-container">
+  <div class="article-menu">
+    <ul>
+      <li>
 
-<table id='flow'>
-{% for article in articles %}
-<tr class="article-row">
-  <td>
-    {{ article.published.time }}
-  </td>
-  <td>
-    <a href="{{ article.url }}">{{ article.title }}</a>
-  </td>
-  <td class="symbols">
-    {{ article.symbols_amount }} symbols
-  </td>
-  <td class="buttom">
-    {% if article.translator %}
-      {% if article.translator == user %}
-        <button type="submit" name="parse" value="" />Скачать текст</button>
-        <input type="hidden" name=article-pk value={{article.pk}} />
-        <label for="file">Выбрать файл:</label> <input type="file" id="file" name='file'/>
-        <button type="submit" name="load" value="">Загрузить</button>
-      {% else %}
-          {% if article.loaded == True %}
-          Готово!
+        <form action="" method="post">
+          {% csrf_token %}
+          <input type="text" name="input-url" value="Вставьте url"/>
+          <input type="submit" name="user-add" value="Добавить" id="btm-add"/>
+        </form>
+        <div>
+          {% if similar %}
+          Нашли похожую, это она?
+          {{url.title}}
+          {{similar.title}}
+          <input type="submit" name="user-sure" value="все равно добавить" id="btm-add"/>
           {% else %}
-          Переводит {{article.translator}}
+            {{ message }}
+            {{url.title}}
           {% endif %}
+        </div>
+      </li>
+      <!-- <li>
+        <a href="">Показать непереведенные</a>
+      </li> -->
+    </ul>
+  </div>
+
+  <div id='flow'>
+    {% for case in cases %}
+    <div class="case-container">
+      <button type="submit">Настройки</button>
+    <table>
+      {% for article in case %}
+      <tr class="article-row" id={{article.pk}} >
+        <td>
+           {{article.published|time:"H:i"}}
+        </td>
+        <td>
+          <a href="{{ article.url }}">{{ article.title }}</a>
+        </td>
+        <td class="symbols">
+          {{ article.symbols_amount }} symbols
+        </td>
+        <td class="button">
+          {% if article.translator %}
+            {% if article.translator == user %}
+            <form action="/main/file/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name=article-pk value={{article.pk}} />
+            <button type="submit" class="parse" name="download" >Скачать текст</button>
+            </form>
+            <form action="/main/file/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input type="hidden" name=article-pk value={{article.pk}} />
+              <label for="file">Выбрать файл:</label> <input type="file" id="file" name='file'/>
+              <button type="submit" class="btn btn-primary" name="load" value="">
+                <span class="glyphicon glyphicon-cloud-upload"></span>Загрузить</button>
+            </form>
+            {% else %}
+                {% if article.loaded == True %}
+                Готово!
+                {% else %}
+                Переводит {{article.translator}}
+                {% endif %}
+            {% endif %}
+          {% else %}
+            <button type="submit" class="take" article_pk={{article.pk}}> Перевести</button>
+        </td>
       {% endif %}
-    {% else %}
-      <button type="submit" id="take" article_pk={{article.pk}} /> Перевести</button>
-  </td>
-{% endif %}
-{% endfor %}
-</table>
+    </tr>
+      {% endfor %}
+    </table>
+      </div>
+  {% endfor %}
+
+  </div>
+  </div>
 {% endblock %}

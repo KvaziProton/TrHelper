@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'tr_helper',
     'celerybeat_status',
     'django_celery_beat',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -31,6 +32,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'anf_man.urls'
@@ -106,7 +108,8 @@ LOGIN_REDIRECT_URL = '/main/'
 LOGOUT_REDIRECT_URL = 'login/'
 
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CELERY_QUEUES = (
 #     Queue('high', Exchange('high'), routing_key='high'),

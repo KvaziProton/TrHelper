@@ -1,5 +1,5 @@
 from celery import shared_task
-from .toolbox import FlowListener, Manager
+from .toolbox import FlowListener, Manager, parse
 
 
 @shared_task
@@ -25,3 +25,8 @@ def check_user_add(url):
         similar_url = None
         manager.write_bd()
     return similar_url
+
+@shared_task
+def form_downloard_response(url):
+    response = parse(url)
+    return response
