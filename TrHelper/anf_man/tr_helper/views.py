@@ -17,7 +17,7 @@ from rest_framework.views import APIView
 from .models import Article, User, CloudAccount, TranslationStatistic, ArticleCase
 from .tasks import check_user_add
 from .toolbox import NewArticle, PyMailCloud, count_ammount_in_loaded, parse
-from .forms import UserAddForm, CloudAccountAddForm, EmbedArticleForm
+from .forms import UserAddForm, CloudAccountAddForm, AddArticleForm
 from .serializers import ArticleSerializer
 
 
@@ -25,6 +25,7 @@ class ButtonActions(LoginRequiredMixin, APIView):
     '''Test view to try handle buttons clicks with ajax '''
 
     template_name = 'main/ajax_article_button.html'
+    form_class = AddArticleForm
 
     def get(self, request):
         querydict = self.request.GET
@@ -42,6 +43,16 @@ class ButtonActions(LoginRequiredMixin, APIView):
             content = render(request, self.template_name, data).content
             response = Response({'content': content})
             return response
+
+
+        def form_valid(self, form):
+            '''Handle attempts to add article from user'''
+
+            url = form.cleaned_data['url']
+            translated_title = form.cleaned_data['translated_title']
+            if 'article_select' in form.cleaned_data:
+                article_select = form.cleaned_data['article_select']
+
 
 
 # def latest_changed(request):
