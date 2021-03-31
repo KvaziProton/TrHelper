@@ -17,7 +17,7 @@ djangorestframework==3.8.2
 grab==0.6.41
 idna==2.7
 kombu==4.2.1
-lxml==4.2.3
+lxml==4.6.3
 more-itertools==4.2.0
 numpy==1.14.5
 Pillow==5.2.0
