@@ -37,7 +37,7 @@ scipy==1.1.0
 selection==0.0.13
 six==1.11.0
 tqdm==4.24.0
-urllib3==1.23
+urllib3==1.26.5
 user-agent==0.1.9
 vine==1.1.4
 weblib==0.1.29
